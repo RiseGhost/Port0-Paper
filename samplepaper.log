@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.1)  23 JUL 2026 17:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.1)  24 JUL 2026 15:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -256,15 +256,15 @@ Package epstopdf Info: Source file: <fig1.eps>
 (epstopdf)                    date: 2026-07-23 14:17:37
 (epstopdf)                    size: 25597 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig1-eps-converted-to.pdf fig1.eps>
-(epstopdf)             \includegraphics on input line 127.
+(epstopdf)             \includegraphics on input line 123.
 Package epstopdf Info: Output file is already uptodate.
 <fig1-eps-converted-to.pdf, id=18, 345.29pt x 142.5325pt>
 File: fig1-eps-converted-to.pdf Graphic file (type pdf)
 <use fig1-eps-converted-to.pdf>
-Package pdftex.def Info: fig1-eps-converted-to.pdf  used on input line 127.
+Package pdftex.def Info: fig1-eps-converted-to.pdf  used on input line 123.
 (pdftex.def)             Requested size: 347.12354pt x 143.29115pt.
 Package babel Info: 'portuges' activates 'portuges' shorthands.
-(babel)             Reported on input line 137.
+(babel)             Reported on input line 157.
  [2] [3 <./fig1-eps-converted-to.pdf>] [4] (./samplepaper.aux)
  ***********
 LaTeX2e <2025-11-01>
@@ -272,15 +272,15 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3169 strings out of 467533
- 50903 string characters out of 5422139
- 478218 words of memory out of 5000000
- 32074 multiletter control sequences out of 15000+600000
+ 3170 strings out of 467533
+ 50916 string characters out of 5422139
+ 479222 words of memory out of 5000000
+ 32075 multiletter control sequences out of 15000+600000
  638495 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,9n,65p,582b,378s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,9n,65p,525b,380s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb>
-Output written on samplepaper.pdf (4 pages, 296889 bytes).
+Output written on samplepaper.pdf (4 pages, 295041 bytes).
 PDF statistics:
  114 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream
