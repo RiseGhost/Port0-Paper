@@ -1,0 +1,264 @@
+% This is samplepaper.tex, a sample chapter demonstrating the
+% LLNCS macro package for Springer Computer Science proceedings;
+% Version 2.21 of 2022/01/12
+%
+\documentclass[runningheads]{llncs}
+%
+\usepackage[english]{babel}  
+\usepackage[T1]{fontenc}
+% T1 fonts will be used to generate the final print and online PDFs,
+% so please use T1 fonts in your manuscript whenever possible.
+% Other font encondings may result in incorrect characters.
+%
+\usepackage{graphicx}
+% Used for displaying a sample figure. If possible, figure files should
+% be included in EPS format.
+%
+% If you use the hyperref package, please uncomment the following two lines
+% to display URLs in blue roman font according to Springer's eBook style:
+%\usepackage{color}
+%\renewcommand\UrlFont{\color{blue}\rmfamily}
+%\urlstyle{rm}
+%
+\begin{document}
+%
+\title{Introduction to Data Centre Management Using a Simulation Game} %Sugestão mas se arranjar melhor !
+%
+%\titlerunning{Abbreviated paper title}
+% If the paper title is too long for the running head, you can set
+% an abbreviated paper title here
+%
+\author{First Author\inst{1}\orcidID{0000-1111-2222-3333} \and
+Second Author\inst{2,3}\orcidID{1111-2222-3333-4444} \and
+Third Author\inst{3}\orcidID{2222--3333-4444-5555}}
+
+% Autores para colocar apenas na versão final
+%%
+%\author{José Miguel Alves Melo dos Santos\inst{1} \and
+%Frutuoso G. M. Silva\inst{1,2}\orcidID{0000-0002-0611-6157} }
+%%
+
+\authorrunning{J. Miguel et al.}
+% First names are abbreviated in the running head.
+% If there are more than two authors, 'et al.' is used.
+%
+\institute{Princeton University, Princeton NJ 08544, USA \and
+Springer Heidelberg, Tiergartenstr. 17, 69121 Heidelberg, Germany
+\email{lncs@springer.com}\\
+\url{http://www.springer.com/gp/computer-science/lncs} \and
+ABC Institute, Rupert-Karls-University Heidelberg, Heidelberg, Germany\\
+\email{\{abc,lncs\}@uni-heidelberg.de}}
+%
+% Afiliações para colocar apenas na versão final
+%%
+%\institute{University of Beira Interior, Covilhã, Portugal \and
+%Instituto de Telecomunicações, Covilhã branch, Portugal\\
+%\email{\{jose.melo.santos,fgmsilva\}@ubi.pt}}
+%%
+\maketitle              % typeset the header of the contribution
+%
+\begin{abstract}
+The abstract should briefly summarize the contents of the paper in
+150--250 words.
+
+\keywords{Data centers simulation \and Management in data centers \and Simulation games \and Game-Based Learning.}
+\end{abstract}
+%
+%
+%
+\section{Introduction}
+
+The video game industry has experienced substantial growth over the past decade. In many countries, its economic impact has already surpassed that of traditional media sectors such as film, television, and newspapers. As the industry continues to expand in both scale and relevance, the application of video games increasingly extends beyond entertainment.
+
+Serious games and simulation-based games provide players with interactive experiences that incorporate educational content. However, studies such as \textit{Game-Based Learning with Computers: Learning, Simulations} \cite{Martens2008} demonstrate that even games developed exclusively for entertainment require players to acquire new knowledge, develop complex skills, and devise effective strategies in order to progress through levels and overcome challenges.
+
+Similarly, research such as \textit{Video Games and Indirect Learning} by Monica Miller \cite{Monica_Miller} suggests that the content of video games can also facilitate indirect learning, that is, learning that occurs without the game being explicitly designed for educational purposes.
+
+Motivated by these findings, this work aims to investigate whether players acquire knowledge while interacting with \textbf{Port 0}, a resource management video game in which the player is responsible for operating a small data center within a fictional setting. Throughout the game, players must purchase, configure, and manage servers, fulfil client requests, and defend the infrastructure against cyberattacks.
+
+Although the game is set in a science fiction universe, it incorporates several simulation-based mechanics, including word-based mini-games and server configuration tasks. The objective is to provide an engaging and enjoyable gameplay experience while simultaneously promoting knowledge acquisition, both through direct learning mechanisms embedded in the mini-games and through indirect learning arising from the contextual environment in which the player operates.
+%
+\section{Related Work}
+
+
+O número de videojogos que transmitem conhecimento ao jogador, quer de forma direta ou indireta, é bastante alargado, podendo estes estarem englobados ou não na categoria de serius games. Em parelelo á industria de videojogos, diversos autores têm desenvolvido estudos e pesquisas sobre aprendizagem em videojogos, nos ultimos anos. \textit{Trends} associadas á área de tecnologia como \textbf{data center} e \textbf{techonology} têm estado cada vez mais populadores nos ultimos anos.
+
+Posto isto, ao longo desta seção o objetivo é analisa as estratégias de aprendizagem aplicadas ao videojogos e preceber como elas surtem efeito. Por fim analisar o crescimento das \textit{trends} relacionadas com o contexto do jogo (\textbf{Port 0}).
+
+\subsection{Aprendizado por observação}
+
+Aprendizado por observação ou aprendizado por visualização é o processo pelo qual um iniciante absorve regras, passos iniciais e procedimentos complexos, simplesmente assistindo a jogadores experientes ou interagindo com simulações e/ou tutoriais \cite{Martens2008}. Este tipo de aprendizagem quando integrado em sistemas de videojogos ou simulações atua como um "andeime" pedagógico para o aluno \cite{Martens2008}.
+
+Alguns titulos como CodeCombat, Manufactoria, Labor Support Game, etc... Utilizam deste metodo para realizar o aprendizado.
+
+No CodeCombat, por exemplo, os desenvolvedor utilizaram uma visão dividida onde o código é realçado linha a linha enquanto o herói executa as ações no ecrã, permitindo observar o resultado direto de cada comando \cite{villareale2020}.
+
+Uma abordagem semelhante ao do CodeCombat foi tomada, no sentido de transmitir ao jogador o significado dos comandos, dentro do minigame (WordRush). Este minigame será abordado na subsection \ref{Development of XX game}.
+
+% Transpondo este conceito para o projeto desenvolvido, elementos como o minigame de palavras, onde o jogador têm de escrever um conjunto que palavras, que estão a % cair, numa dada ordem, com a intenção de simular a escrita de comando em um terminal de servidor, é considero um elemento de aprendizagem por observação.
+
+\subsection{Self-tutorage and Trial and error}
+
+O aprendizado conseguido através de trial and error, é uma estratégia de aprendizado ativa e exploratória na qual o individuo testa hispóteses em tempo real para verificar quais ações produzem resultados eficazes e quais levam à falha \cite{villareale2020}.
+
+Trial and error, também é um processo em que os alunos utilizam a repetição sistemática de missões ou tarefas até atingirem o sucesso ou a pontuação máxima, permitindo-lhes compreender conceitos complexos através da experiência direta das suas próprias falhas \cite{Marques2021,Sari2025}.
+
+Feedback loop, pode ser utilizado como mecânisco de maximar a técnica anterior, uma vez que criar um ciclo repetitivo onde o sistema reague as ações do jogador servindo assim como material de estudo \cite{Ibrahim2010}.
+
+Neste sentido o projeto desenvolvido, \textbf{Port 0}, utiliza de ciclos de gameplay onde o jogador terá que repetir um dado conjunto de tarefas. O mesmo será desenvolvido em mais detalhe da seção \ref{Design and development of XX game}.
+
+Por fim, a técnica de self-tutorage, é uma prática comum, especialmente em áreas como a programação, que envolve o desenvolvimento de soluções através de testes constantes do que funciona ou não em tempo real, funcionando como uma forma de self learning e atualização constante de competências \cite{BaxterWebb2016}.
+
+\subsection{Indirect learning}
+
+O indirect learning, é um processo onde o conhecimento é adquirido como um subproduto de outra atividade, como o lazer \cite{Lindberg2019,BaxterWebb2016}. O funcionamento deste processo ocerro de forma tácita, inconsciente ou natural, muitas vezes sem que o indivíduo perceba inicialmente que está a aprender \cite{Lindberg2019}.
+
+Este mecanismo de aprendizagem funciona pois, em vez de ensinar conteúdos de forma explícita, os jogos criam ambientes nos quais o conhecimento é construído pela experiência, pela resolução de problemas e pela interação com sistemas complexos \cite{Monica_Miller}.
+Jogos como \textit{No Man's Sky} \cite{NoMansSky} e \textit{The Legend of Zelda: Breath of the Wild} \cite{BOTW} são titulos comerciais, que no entanto transmitem conhecimentos como:
+\begin{itemize}
+    \item Experimentação;
+    \item Pensamento ciêntifico;
+    \item Criatividade;
+    \item Resolução de problemas complexos;
+    \item Gerenciamento de recursos.
+\end{itemize}
+Segundo o estudo desenvolvido por Monica Miller, \textit{No Man's Sky} \cite{NoMansSky} promove curiosidade científica não porque ensina ciência de forma explícita, mas porque sua estrutura de jogo incentiva o jogador a adotar comportamentos semelhantes aos de uma investigação científica \cite{Monica_Miller}.
+
+Da mesma forma, \textbf{Port 0}, tenta promover a curiosidade científica quer seja através do cenário, elementos gráficos ou através de tarefas.
+
+\subsection{\textit{Hype} pela área de tecnologia}
+
+\textit{Hype} is "a situation in which something is advertised and discussed in newspapers, on television, etc. a lot in order to attract everyone's interest" \cite{CambridgeHype}.
+
+Para fazer a avaliação do \textit{hype} de tópicos como techonology e data center foi utilizada a ferramenta \textit{Google Trends}, que mede o relative search interest por termos introduzidos pelos utilizadores no motor de busca da Google, ao longo do tempo e por região geográfica.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{Images/trends.pdf}
+    \caption{Relative Search Interest for \textit{Data Center} and \textit{Technology}.}
+    \label{fig:trends}
+\end{figure}
+
+Os dados obtidos do \textit{Google Trends} podem ser analisados na figure \ref{fig:trends}, que relaciona o relative search interest com o time, a nivel mundial dos tópicos: \textit{data center} and \textit{techonology}.
+
+Analisando esses dados, dá para concluir que nos últimos 5 anos estes tópicos têm tido um crescimento elevado. Embora não parece, existe uma relação direta entre o interresse popular e interresse de aprender.
+
+O interresse popular de um dado tema ou produto pode ser o resultado de uma ação de marketing. Quando aplicado a um jogo, nem simultâneo com contexto cativante, pode elevar o nível de interesse do jogador antes mesmo da interação começa \cite{Martens2008}.
+
+Além disso a própria área em que se insere o projeto é a catalizadora da vontade de aprender. Uma vez jovens que aspiram a carreiras em tecnologia, como o desenvolvimento de jogos, são atraídos por cursos de informática porque estes se orientam em torno de um "objeto de prazer" (o jogo) \cite{BaxterWebb2016}.
+
+Com isto, o projeto a desenvolvido, \textit{\textbf{Port 0}}, apresenta um forte potêncial de aprendizagem, quer ele direto ou indireto, uma vez que está inserido numa área com um \textit{hype} crescente. Uma vez que a atratividade de um jogo educativo está ligada ao seu conteúdo e à conexão que o aluno faz com o tema \cite{Marques2021}.
+
+
+%
+\section{Design and development of XX game}
+\label{Design and development of XX game}
+
+\subsection{Design of XX game}
+
+\subsection{Development of XX game}
+\label{Development of XX game}
+
+%
+\section{Results}
+
+%
+\section{Conclusion}
+
+%
+% ---- Bibliography ----
+%
+% BibTeX users should specify bibliography style 'splncs04'.
+% References will then be sorted and formatted in the correct style.
+%
+% \bibliographystyle{splncs04}
+% \bibliography{mybibliography}
+%
+\begin{thebibliography}{8}
+\bibitem{ref_article1}
+Author, F.: Article title. Journal \textbf{2}(5), 99--110 (2016)
+
+\bibitem{ref_lncs1}
+Author, F., Author, S.: Title of a proceedings paper. In: Editor,
+F., Editor, S. (eds.) CONFERENCE 2016, LNCS, vol. 9999, pp. 1--13.
+Springer, Heidelberg (2016). \doi{10.10007/1234567890}
+
+\bibitem{ref_book1}
+Author, F., Author, S., Author, T.: Book title. 2nd edn. Publisher,
+Location (1999)
+
+\bibitem{ref_proc1}
+Author, A.-B.: Contribution title. In: 9th International Proceedings
+on Proceedings, pp. 1--2. Publisher, Location (2010)
+
+\bibitem{ref_url1}
+LNCS Homepage, \url{http://www.springer.com/lncs}, last accessed 2023/10/25
+
+\bibitem{Tom_Hirschfeld}
+Hirschfeld, T.: \textit{How to Master Video Games}, Bantam Books, New York (1981)
+
+\bibitem{Monica_Miller}
+Miller, M.: \textit{Video Games and Indirect Learning}, Advances in Game-Based Learning (2021)
+
+\bibitem{Martens2008}
+Martens, A., Diener, H., Malo, S.: 
+\textit{Game-Based Learning with Computers Learning, Simulations, and Games}, vol. 5080, Berlin, Heidelberg (2008)
+
+\bibitem{villareale2020}
+Villareale, J., Biemer, C. F., Seif El-Nasr, M., \& Zhu, J.
+\textit{Reflection in Game-Based Learning: A Survey of Programming Games}.
+In \textit{Proceedings of the International Conference on the Foundations of Digital Games (FDG '20)}.
+ACM, 2020.
+doi:10.1145/3402942.3403011
+
+\bibitem{Marques2021}
+Marques, B. P., Reis, R., Cardoso, M.:
+\textit{Games: The Motivation in Engineering Education}.
+In: Ninth International Conference on Technological Ecosystems for Enhancing Multiculturality (TEEM'21),
+pp. 395--399. ACM, New York (2021).
+doi:10.1145/3486011.3486483
+
+\bibitem{Sari2025}
+Sari, N. M., Yaniawati, P., Supianti, I. I., Indriani, R.:
+\textit{Digital Game-Based Learning Interventions on Students' Numeracy Skills and Engagement}.
+Formatif: Jurnal Ilmiah Pendidikan MIPA, 15(1), 39--50 (2025).
+doi:10.30998/formatif.v15i1.23356
+
+\bibitem{Ibrahim2010}
+Ibrahim, R., Jaafar, A.:
+\textit{Using Educational Games in Learning Introductory Programming: A Pilot Study on Students' Perceptions}.
+In: IEEE International Conference, pp. 1--5. IEEE (2010).
+doi:10.1109/ITSIM.2010.5561324
+
+\bibitem{BaxterWebb2016}
+Baxter-Webb, J.:
+\textit{The Role of Gaming Platforms in Young Males' Trajectories of Technical Expertise}.
+Transactions of the Digital Games Research Association (ToDiGRA),
+2(3), 89--115 (2016).
+doi:10.26503/todigra.v2i3.58
+
+\bibitem{Lindberg2019}
+Lindberg, R. S. N., Laine, T. H., Haaranen, L.:
+\textit{Gamifying Programming Education in K-12: A Review of Programming Curricula in Seven Countries and Programming Games}.
+British Journal of Educational Technology,
+50(4), 1979--1995 (2019).
+doi:10.1111/bjet.12685
+
+\bibitem{NoMansSky}
+Hello Games:
+\textit{No Man's Sky}.
+Video game. Hello Games, Guildford (2016)
+
+\bibitem{BOTW}
+Nintendo EPD:
+\textit{The Legend of Zelda: Breath of the Wild}.
+Video game. Nintendo, Kyoto (2017)
+
+\bibitem{CambridgeHype}
+Cambridge Dictionary:
+\textit{Hype}.
+https://dictionary.cambridge.org/dictionary/english/hype,
+last accessed 2026/08/03
+
+\end{thebibliography}
+\end{document}
