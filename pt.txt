@@ -154,10 +154,37 @@ Com isto, o projeto a desenvolvido, \textit{\textbf{Port 0}}, apresenta um forte
 \section{Design and development of XX game}
 \label{Design and development of XX game}
 
-\subsection{Design of XX game}
+O conceito do jogo é descrito da seguinte forma: Um cenário fantasios com elementos de fição ciêntifica onde o jogador terá de intrepetar o papel de um engenheiro dentro um ambiente que remete a um data centers, onde ele terá que realizar tarefas tecnicas. Este tarefas seram apresentadas ao jogador sobre a forma de minigame de palavra, onde o mesmo terá que escrever um conjunto de comandos com uma dada finalidade. Além disso o jogador terá que se defender de ataques utilizando para isso de um canhão.
+
+O jogo também apresenta vários loops de ações, entre os quais se destacam o loop de tarefas e o loop de ataques. O loop de missões é o mais comun e o que dura mais, é nele que o jogador recebe pedidos de clientes, onde terá de escolher entre aceita-los ou rejeitálos. Em caso de aceitação terá de resolver um minigame palavra inspirado na escrita de comandos em um terminal, onde o mesmo terá de escrever um conjunto de comandos para completar a tarefa. Já no loop de ataques, o jogador terá de usar um canhão para se defender de hordas de inimigos que viram atacar o espaço do data center.
+
+Posto isto, várias tecnicas de design foram aplicadas no sentido de atingir o conceito idealizada da melhor forma possivel, tais como:
+\begin{itemize}
+    \item Framework MDA \cite{framework-mda};
+    \item Flow \cite{flow};
+    \item Hook model \cite{modelo-hook}.
+\end{itemize}
+
+O framework MDA \cite{framework-mda} foi utiliza como guia e construção do jogo, premitindo defenir as Mechanics, Dynamics e Aesthetic do projecto.
+
+O flow \cite{flow}, foi uma das tecnicas mais importantes, pois ela ajuda a medir e a projectar uma experiência que prenda o jogador em um estado flow, isto prenda um jogador em um estado de equilibrio, onde o mesmo não se encontre em um estado de boredom nem de anxiety.
+
+O loop de ataques, foi pensando justamente para manter o jogador em estado de flow, uma vez este tipo de loop quebra a gameplay monótona das tarefas e estimula o jogador, fazendo assim o jogador se afastar do estado boredom.
+
+Por fim, o Hook model \cite{modelo-hook}, surge como uma estrutura teórica e prática desenhada para fomentar a criação de hábitos através da interação contínua com o produto. Além disso o modelo ajuda a defenir hábitos através dos quais é possivel criar interações contínuas com o produto, mesmo caso o jogo desenvolvido.
 
 \subsection{Development of XX game}
 \label{Development of XX game}
+
+\textit{\textbf{Port 0}}, foi desenvolvido utilizando um conjunto de ferramentas e de tecnologias, tais como: \textit{Unity} como engine grafica, \textit{C\#} como linguagem de programação, \textit{Blender} como software de criação de modelos 3D e de texturização dos mesmos.
+
+O jogo é composto por várias sistema que se relacionam com o objetivo de criar uma experiência completa e interativa. O sistema da loja, premite ao jogador comprar um servidor, no entanto para isso o jogador terá que passar por um conjunto de etapas onde terá de configurar vários componentes. Com isto a ideia seria introduzir os diferentes componentes que compõem um servidor ao jogador, além de fornecer uma pequena descrição à cerca de cada um.
+
+Juntamente com o sistema da loja foi desenvolvido um sistema de economia, que é responsável por gerir as transições realizadas pelo jogador, como compra e venda. Além disso controla as transações periódicas, como pagamentos sistemáticos realizados por clientes devivo a serviços e pagamento de despesas como energia.
+
+O sistema de tarefas é responsável por escolher tarefas randomicamente e as apresentar para o jogador. Este sistema é o que possibilita ao jogador ganhar dinheiro, quer de forma ativa realizando novas tarefas quer de forma passiva com pagamentos oriundos de tarefas prévias. Este sistema é um loop continuo que atua durante toda a duração da gameplay. O minigame (\textit{WordRush}), onde o jogador escrever conjunto de comandos de Linux, é uma consequência deste sistema, uma vez que a resuloção deste minigame é o que encerra a tarefa aceite.
+
+Por fim o sistema de combate, é o ultimo sistema, e é responsável por gerir os ataques harckers que acontecem. Ele funciona de forma periódica e a sua função é quebrar o cliclo de gameplay das tarefas, atuando como elemento de rotura que interrompe uma gameplay que pode ficar monotona, dando um pouco mais de ação e divertimento para o jogador.
 
 %
 \section{Results}
