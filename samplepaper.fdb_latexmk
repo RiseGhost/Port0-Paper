@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1786737673.86017 "/home/riseghost/LegionStorage/ShortPaper/riseghost/samplepaper.tex" "samplepaper.pdf" "samplepaper" 1786737674.28942 0
+["pdflatex"] 1787778540.98745 "/home/riseghost/LegionStorage/ShortPaper/riseghost/samplepaper.tex" "samplepaper.pdf" "samplepaper" 1787778541.53077 0
   "/etc/texmf/web2c/texmf.cnf" 1777608529.5952 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/riseghost/LegionStorage/ShortPaper/riseghost/samplepaper.tex" 1786737673.49243 19836 69e408b95e14fc222d40f9d0c7b7283b ""
+  "/home/riseghost/LegionStorage/ShortPaper/riseghost/samplepaper.tex" 1787778540.66821 20513 af68ea0e71ea1d44f372bb752b2ddfcf ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbi1000.tfm" 1136768653 3072 e6fe53b666f9cbd66cb135c6fdea66d3 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx0900.tfm" 1136768653 3584 1a7de6c99457381c64abc1a7c545505f ""
@@ -64,8 +64,8 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1777609085 3641282 a015f591937ceced212075108f32bd17 ""
   "Images/trends.pdf" 1785722770.12708 22482 9e9d232647e54f4e2c3ed29dcca37e39 ""
   "llncs.cls" 1784812658.24422 43402 5fb5a2dc40571aa40f3d199c00cbb986 ""
-  "samplepaper.aux" 1786737674.22402 3154 99013974504c9003675b67c64d0ce1ee "pdflatex"
-  "samplepaper.tex" 1786737673.49243 19836 69e408b95e14fc222d40f9d0c7b7283b ""
+  "samplepaper.aux" 1787778541.44921 3174 25f8970a2525b43255e949a96c71f1b6 "pdflatex"
+  "samplepaper.tex" 1787778540.66821 20513 af68ea0e71ea1d44f372bb752b2ddfcf ""
   (generated)
   "samplepaper.aux"
   "samplepaper.log"
