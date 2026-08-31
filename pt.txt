@@ -189,6 +189,108 @@ Por fim o sistema de combate, é o ultimo sistema, e é responsável por gerir o
 %
 \section{Results}
 
+\subsection{Metodologia de avaliação}
+
+Para avaliar o projeto desenvolvido foram aplicados dois formulários — um antes e outro após a sessão de jogo — com o objetivo de medir o aumento de conhecimentos dos participantes. Nesta sessão, o objetivo do jogador era chegar até ao 1.º ataque de DDoS.
+Em simultâneo, as sessões de jogo foram observadas para identificar padrões de utilização e oportunidades de melhoria de UX, analisados segundo as heurísticas de usabilidade de Nielsen \cite{nielsen1994enhancing}, escolhidas por terem sido desenvolvidas especificamente para avaliar a experiência do utilizador. Foram ainda recolhidos automaticamente dados de telemetria através da plataforma Firebase, permitindo identificar tempos de interação anómalos em diferentes momentos da gameplay.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3.5cm}|c|p{3cm}|p{4cm}|}
+        \hline
+        \textbf{Problema} & \textbf{Grau} & \textbf{Heuristica} & \textbf{Solução} \\ \hline
+        Falta de \textit{feedback} no sistema de som/notificações/ config. CPU & Baixo & Visibilidade do estado do sistema & Adição uma \textit{label} informativa \\ \hline
+        Controlos do canhão & Elevado & Controlos do utilizador e liberdade / Consitência e padronização & Inverter os commandos \\ \hline
+        Jogador não se lembra como abrir a loja & Elevado & Reconhecimento em vez de memorização & Adição de indicativo visual na UI. \\ \hline
+        Jogador não têm noção da finalidade dos componentes de \textit{hardware} & Elevado & Correspondência entre o sistema e o mundo & Adição de uma label com uma pequena descrição do componente na loja \\ \hline
+        Falta de \textit{feedback} nos emails & Elevado & Visibilidade do estado do sistema & Adição de um idicador visual, que aparece sempre que existe um email por ler \\ \hline
+        Câmara muito próxima do jogador & Baixo & Controlo e liberdade do jogador & Adição do controlo de zoom da câmara \\ \hline
+    \end{tabular}
+    \caption{Analise dos problemas usando as heuristicas de Nielsen}
+    \label{tab:DadosNielsen}
+\end{table}
+
+
+\subsection{Caracterização da amostra}
+
+A amostra é composta por 25 indivíduos, de vários géneros e idades compreendidas entre menos de 18 e mais de 30 anos, maioritariamente concentrados entre os 18 e os 29 anos (21 dos 25 participantes). Quanto a conhecimentos prévios em informática, 52\% da amostra possui formação académica na área, enquanto os restantes 48\% têm apenas conhecimentos de utilizador ou nenhum. Este fator é relevante, pois participantes já formados tendem a apresentar um incremento de conhecimento menos acentuado.
+
+\begin{table}[htbp]
+    \centering
+    \begin{minipage}{0.42\textwidth}
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{Faixa de idades} & \textbf{Indivíduos} \\ \hline
+            Menos de 18 anos & 2 \\ \hline
+            18 a 24 anos & 10 \\ \hline
+            25 a 29 anos & 11 \\ \hline
+            30 a 34 anos & 2 \\ \hline
+            Mais de 35 anos & 0 \\ \hline
+        \end{tabular}
+        \caption{Faixa de idades}
+        \label{tab:Faixa_Idades}
+    \end{minipage}%
+    \begin{minipage}{0.50\textwidth}
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{Conhecimentos prévios} & \textbf{Indivíduos} \\ \hline
+            Formação académica na área & 13 \\ \hline
+            Apenas na ótica do utilizador & 4 \\ \hline
+            Não possuir & 7 \\ \hline
+        \end{tabular}
+        \caption{Conhecimentos prévios em informática}
+        \label{tab:Conhecimentos}
+    \end{minipage}
+\end{table}
+
+\subsection{Conhecimento transmitido pelo jogo}
+
+A comparação entre as respostas pré e pós-jogo revela ganhos de conhecimento consistentes nas áreas diretamente abordadas pelo jogo, nomeadamente componentes de hardware (CPU e discos), arquiteturas (com destaque para ARM, cuja recomendação surge na loja associada à poupança energética), marcas de CPU (IBM), sistemas operativos (Linux), frameworks web e formas de instalação de software. A Tabela \ref{Tab:Lean} resume as variações mais significativas.
+
+Em contraste, o reconhecimento de Ransomware manteve-se inalterado (18 respostas antes e depois), o que é coerente com o facto de este ataque não ser diretamente abordado no jogo — ao contrário do DDoS, cujo reconhecimento aumentou 41,2\% (de 17 para 24 respostas corretas). Isto sugere que os ganhos de conhecimento estão concentrados nos conteúdos efetivamente ensinados pela experiência de jogo, e não numa melhoria genérica e não específica.
+
+\begin{tabular}{|c|c|}
+    \hline
+    \textbf{Indicador de conhecimento avaliado} & \textbf{Variação (antes → depois)} \\ \hline
+    Reconhecimento da IBM como marca de CPU & 8\% → 48\%  (+40 p.p.) \\ \hline
+    Reconhecimento do Linux como sistema operativo & 76\% → 88\%  (+12 p.p.) \\ \hline
+    Reconhecimento da arquitetura ARM & 56\% → 84\%  (+28 p.p.) \\ \hline
+    Reconhecimento de frameworks (ex.: Apache) & 48\% → 72\%  (+24 p.p.) \\ \hline
+    Instalação de software via terminal (resposta correta) & 15 → 24  (+60\%) \\ \hline
+    Reconhecimento do ataque DDoS & 17 → 24  (+41,2\%) \\ \hline
+\end{tabular}
+\label{Tab:Lean}
+
+\subsection{Análise de dados analíticos (telemetria)}
+
+Os dados de telemetria recolhidos via Firebase permitiram calcular estatísticas descritivas (média, desvio padrão e coeficiente de variação, CV) para as principais ações do jogador:
+
+\begin{tabular}{|c|c|}
+    \hline
+    \textbf{Métrica analítica (tempo)} & \textbf{Média | Desvio padrão | CV} \\ \hline
+    Compra do 1º servidor & 125,94 s | 84,88 s | 67,39\%\\ \hline
+    Duração do ataque (1º ataque DDoS) & 85,33 s | 25,11 s | 29,42\% \\ \hline
+    Tempo total até ao fim do 1º ataque & 85,33 s | 25,11 s | 29,42\% \\ \hline
+\end{tabular}
+\label{Tab:TelemetricData}
+
+A compra do primeiro servidor apresenta a maior variabilidade (CV de 67,39\%), possivelmente associada à heterogeneidade de experiência prévia em informática da amostra, o que resulta que participantes com formação na área tendem a executar esta tarefa mais rapidamente, embora os dados não permitam estabelecer uma relação causal direta.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{Images/Compra de servidor.pdf}
+    \caption{Tempo necessário para os jogadores efetuarem a compra do primeiro servidor (elevada dispersão face à média).}
+\end{figure}
+
+Já a duração do ataque (minigame de combate) apresenta uma variabilidade moderada (CV de 29,42\%), inferior à observada nas restantes ações. Este resultado é atribuído à natureza direta e familiar desta mecânica, semelhante a mecânicas presentes noutros videojogos. O tempo total até à conclusão do 1.º ataque (CV de 35,90\%) revela, através da linha de média, dois grupos de desempenho distintos, refletindo a diversidade da amostra. Por fim, o minigame de palavras WordRush apresentou tempos médios entre 30 segundos e 1m30s por categoria, um intervalo considerado positivo por evitar previsibilidade sem tornar as tarefas demasiado longas.
+
+\subsection{Síntese}
+
+No conjunto, os resultados do Capítulo 5 sugerem que o jogo contribui para um aumento mensurável de conhecimentos técnicos especificamente relacionados com os conteúdos nele abordados (hardware, arquiteturas, sistemas operativos, frameworks e o ataque DDoS), sem efeito equivalente em conteúdos não trabalhados (Ransomware). A análise de usabilidade (heurísticas de Nielsen) identificou problemas concretos, sobretudo de feedback visual e descoberta de funcionalidades, que foram corrigidos com soluções específicas. Os dados de telemetria mostram desempenhos heterogéneos nas tarefas iniciais (compra de servidor), mas mais consistentes nas mecânicas centrais de jogo (ataque), sugerindo boa aprendizagem das mecânicas principais ao longo da sessão.
+
+
 %
 \section{Conclusion}
 

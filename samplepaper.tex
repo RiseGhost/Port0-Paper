@@ -11,6 +11,7 @@
 % Other font encondings may result in incorrect characters.
 %
 \usepackage{graphicx}
+\usepackage{float}
 % Used for displaying a sample figure. If possible, figure files should
 % be included in EPS format.
 %
@@ -193,8 +194,118 @@ Finally, the combat system is responsible for managing the hacker attacks that o
 %
 \section{Results}
 
-%
+\subsection{Evaluation Methodology}
+
+To evaluate the developed project, two questionnaires were applied — one before and another after the game session — aimed at measuring the participants' increase in knowledge. In this session, the player's goal was to reach the 1st DDoS attack.
+Simultaneously, the game sessions were observed to identify usage patterns and opportunities for UX improvement, analyzed according to Nielsen's usability heuristics \cite{nielsen1994enhancing}, chosen because they were specifically developed to evaluate user experience. Telemetry data was also automatically collected through the Firebase platform, allowing the identification of anomalous interaction times at different moments of gameplay.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{3.5cm}|c|p{3cm}|p{4cm}|}
+        \hline
+        \textbf{Problem} & \textbf{Severity} & \textbf{Heuristic} & \textbf{Solution} \\ \hline
+        Lack of \textit{feedback} in sound system/notifications/CPU config. & Low & Visibility of system status & Addition of an informative \textit{label} \\ \hline
+        Cannon controls & High & User control and freedom / Consistency and standards & Invert commands \\ \hline
+        Player does not remember how to open the shop & High & Recognition rather than recall & Addition of a visual indicator on the UI \\ \hline
+        Player lacks awareness of the purpose of \textit{hardware} components & High & Match between system and the real world & Addition of a label with a short component description in the shop \\ \hline
+        Lack of \textit{feedback} in emails & High & Visibility of system status & Addition of a visual indicator that appears whenever there is an unread email \\ \hline
+        Camera too close to the player & Low & User control and freedom & Addition of camera zoom control \\ \hline
+    \end{tabular}
+    \caption{Analysis of problems using Nielsen's heuristics}
+    \label{tab:DadosNielsen}
+\end{table}
+
+
+\subsection{Sample Characterization}
+
+The sample consists of 25 individuals of various genders and ages ranging from under 18 to over 30 years old, mostly concentrated between 18 and 29 years old (21 out of 25 participants). Regarding prior knowledge in computer science, 52\% of the sample has an academic background in the area, while the remaining 48\% have only user-level knowledge or none at all. This factor is relevant, as participants with prior training tend to show a less pronounced knowledge gain.
+
+\begin{table}[htbp]
+    \centering
+    \begin{minipage}{0.42\textwidth}
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{Age range} & \textbf{Individuals} \\ \hline
+            Under 18 years old & 2 \\ \hline
+            18 to 24 years old & 10 \\ \hline
+            25 to 29 years old & 11 \\ \hline
+            30 to 34 years old & 2 \\ \hline
+            Over 35 years old & 0 \\ \hline
+        \end{tabular}
+        \caption{Age range}
+        \label{tab:Faixa_Idades}
+    \end{minipage}%
+    \begin{minipage}{0.50\textwidth}
+        \centering
+        \begin{tabular}{|c|c|}
+            \hline
+            \textbf{Prior knowledge} & \textbf{Individuals} \\ \hline
+            Academic degree in the area & 13 \\ \hline
+            User level only & 4 \\ \hline
+            None & 7 \\ \hline
+        \end{tabular}
+        \caption{Prior knowledge in computer science}
+        \label{tab:Conhecimentos}
+    \end{minipage}
+\end{table}
+
+\subsection{Knowledge Conveyed by the Game}
+
+The comparison between pre- and post-game responses reveals consistent knowledge gains in areas directly addressed by the game, namely hardware components (CPU and hard drives), architectures (highlighting ARM, whose recommendation appears in the shop associated with energy savings), CPU brands (IBM), operating systems (Linux), web frameworks, and software installation methods. Table \ref{Tab:Lean} summarizes the most significant variations.
+
+In contrast, Ransomware recognition remained unchanged (18 responses before and after), which is consistent with the fact that this attack is not directly addressed in the game — unlike DDoS, whose recognition increased by 41.2\% (from 17 to 24 correct responses). This suggests that knowledge gains are concentrated on content effectively taught through the gameplay experience, rather than a generic and non-specific improvement.
+
+
+
+\begin{tabular}{|p{6cm}|c|}
+    \hline
+    \textbf{Evaluated knowledge indicator} & \textbf{Variation (before → after)} \\ \hline
+    Recognition of IBM as a CPU brand & 8\% → 48\%  (+40 p.p.) \\ \hline
+    Recognition of Linux as an operating system & 76\% → 88\%  (+12 p.p.) \\ \hline
+    Recognition of the ARM architecture & 56\% → 84\%  (+28 p.p.) \\ \hline
+    Recognition of frameworks (e.g., Apache) & 48\% → 72\%  (+24 p.p.) \\ \hline
+    Software installation via terminal (correct answer) & 15 → 24  (+60\%) \\ \hline
+    Recognition of DDoS attack & 17 → 24  (+41.2\%) \\ \hline
+\end{tabular}
+\label{Tab:Lean}
+
+\subsection{Analytical Data Analysis (Telemetry)}
+
+Telemetry data collected via Firebase allowed the calculation of descriptive statistics (mean, standard deviation, and coefficient of variation, CV) for the main player actions:
+
+
+\begin{tabular}{|p{6cm}|p{4cm}|}
+    \hline
+    \textbf{Analytical metric (time)} & \textbf{Mean | Standard deviation | CV} \\ \hline
+    Purchase of 1st server & 125.94 s | 84.88 s | 67.39\%\\ \hline
+    Attack duration (1st DDoS attack) & 85.33 s | 25.11 s | 29.42\% \\ \hline
+    Total time until the end of the 1st attack & 85.33 s | 25.11 s | 29.42\% \\ \hline
+\end{tabular}
+\label{Tab:TelemetricData}
+
+The purchase of the first server shows the highest variability (CV of 67.39\%), possibly associated with the heterogeneity of the sample's prior computer science experience, resulting in participants with formal education in the area executing this task faster, although the data does not allow establishing a direct causal relationship.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{Images/Compra de servidor.pdf}
+    \caption{Time required for players to purchase the first server (high dispersion relative to the mean).}
+\end{figure}
+
+On the other hand, the attack duration (combat minigame) presents moderate variability (CV of 29.42\%), lower than that observed in other actions. This result is attributed to the straightforward and familiar nature of this mechanic, similar to mechanics found in other video games. The total time until the completion of the 1st attack (CV of 35.90\%) reveals, through the average trendline, two distinct performance groups, reflecting the diversity of the sample. Finally, the WordRush word minigame presented average times between 30 seconds and 1m30s per category, an interval considered positive for avoiding predictability without making tasks overly long.
+
+\subsection{Summary}
+
+Overall, the results in Chapter 5 suggest that the game contributes to a measurable increase in technical knowledge specifically related to the content covered (hardware, architectures, operating systems, frameworks, and DDoS attacks), with no equivalent effect on unaddressed topics (Ransomware). The usability analysis (Nielsen's heuristics) identified concrete issues, mostly regarding visual feedback and feature discoverability, which were resolved with targeted solutions. Telemetry data shows heterogeneous performance in initial tasks (server purchase) but greater consistency in core game mechanics (attack), suggesting effective learning of the primary mechanics throughout the session.
+
 \section{Conclusion}
+
+This paper presented an evaluation of \textbf{Port 0}, a resource management simulation game designed to foster both direct and indirect learning within data center management and foundational technology concepts. By integrating mechanics such as server hardware configuration, command-line minigames, and dynamic DDoS defense loops, the game aims to provide an engaging educational experience without sacrificing commercial entertainment value. 
+
+The empirical evaluation, conducted with a sample of 25 participants across varied technical backgrounds, demonstrates that interactive simulation mechanics can lead to measurable knowledge acquisition. Post-game assessments revealed notable improvements in technical areas explicitly embedded in gameplay—such as server architecture awareness, operating system commands, software deployment, and cyberattack mitigation—while domain concepts omitted from the game mechanics showed no change. Furthermore, telemetry data and usability evaluations based on Nielsen’s \cite{nielsen1994enhancing} heuristics proved essential for identifying user experience bottlenecks, enabling iterative interface and feedback improvements.
+
+Overall, the findings suggest that contextualized, mechanics-driven video games serve as effective pedagogical tools for technical education. Future work will focus on expanding the scope of operational challenges within \textbf{Port 0}, introducing advanced security scenarios such as ransomware mitigation, and conducting longitudinal studies with larger cohort groups to assess long-term knowledge retention.
+
 
 %
 % ---- Bibliography ----
@@ -307,6 +418,12 @@ Communications of the ACM,
 Eyal, N.:
 \textit{Hooked: How to Build Habit-Forming Products}.
 Penguin UK (2014)
+
+\bibitem{nielsen1994enhancing}
+Nielsen, J.:
+\textit{Enhancing the Explanatory Power of Usability Heuristics}.
+In: Proceedings of the SIGCHI Conference on Human Factors in Computing Systems,
+pp. 152--158 (1994).
 
 \end{thebibliography}
 \end{document}

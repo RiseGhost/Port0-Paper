@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.1)  26 AUG 2026 22:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.1)  31 AUG 2026 21:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -196,39 +196,46 @@ File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen172
 \Gin@req@width=\dimen173
+) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count316
+\float@exts=\toks22
+\float@box=\box101
+\@float@everytoks=\toks23
+\@floatcapt=\box102
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count316
+\l__color_backend_stack_int=\count317
 ) (./samplepaper.aux)
 \openout1 = `samplepaper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count317
+\scratchcounter=\count318
 \scratchdimen=\dimen174
-\scratchbox=\box101
-\nofMPsegments=\count318
-\nofMParguments=\count319
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count320
+\scratchbox=\box103
+\nofMPsegments=\count319
+\nofMParguments=\count320
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count321
 \MPscratchDim=\dimen175
-\MPnumerator=\count321
-\makeMPintoPDFobject=\count322
-\everyMPtoPDFconversion=\toks23
+\MPnumerator=\count322
+\makeMPintoPDFobject=\count323
+\everyMPtoPDFconversion=\toks25
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -236,24 +243,24 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 58.
+(Font)              <7> on input line 59.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 58.
+(Font)              <5> on input line 59.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 58.
+(Font)              <9> on input line 59.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 58.
+(Font)              <6> on input line 59.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
-LaTeX Warning: Reference `Development of XX game' on page 2 undefined on input line 95.
+LaTeX Warning: Reference `Development of XX game' on page 2 undefined on input line 96.
 
 [2]
 <Images/trends.pdf, id=22, 665.79446pt x 375.57637pt>
 File: Images/trends.pdf Graphic file (type pdf)
 <use Images/trends.pdf>
-Package pdftex.def Info: Images/trends.pdf  used on input line 139.
+Package pdftex.def Info: Images/trends.pdf  used on input line 140.
 (pdftex.def)             Requested size: 347.12354pt x 195.8166pt.
 
 Overfull \hbox (34.93849pt too wide) has occurred while \output is active
@@ -265,17 +272,95 @@ Overfull \hbox (34.93849pt too wide) has occurred while \output is active
                                     [] []
  []
 
-[5] [6]
-Overfull \hbox (24.11305pt too wide) in paragraph at lines 289--293
-[]\T1/cmr/m/n/9 Cambridge Dic-tio-nary: \T1/cmr/m/it/9 Hype\T1/cmr/m/n/9 . https://dictionary.cambridge.org/dictionary/english/hype,
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 207--207
+[]\T1/cmr/m/n/9 Lack of \T1/cmr/m/it/9 feed-back
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 207--207
+\T1/cmr/m/n/9 in sound sys-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--207
+\T1/cmr/m/n/9 tem/notifications/CPU
+ []
+
+
+Underfull \hbox (badness 1360) in paragraph at lines 207--207
+[]\T1/cmr/m/n/9 Visibility of sys-tem
+ []
+
+
+Underfull \hbox (badness 2452) in paragraph at lines 208--208
+\T1/cmr/m/n/9 dom / Con-sis-tency
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--209
+[]\T1/cmr/m/n/9 Recognition rather
+ []
+
+
+Underfull \hbox (badness 5908) in paragraph at lines 210--210
+\T1/cmr/m/n/9 tem and the real
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--211
+[]\T1/cmr/m/n/9 Lack of \T1/cmr/m/it/9 feed-back \T1/cmr/m/n/9 in
+ []
+
+
+Underfull \hbox (badness 1360) in paragraph at lines 211--211
+[]\T1/cmr/m/n/9 Visibility of sys-tem
+ []
+
+
+Underfull \hbox (badness 1552) in paragraph at lines 212--212
+[]\T1/cmr/m/n/9 Addition of cam-era zoom
+ []
+
+
+Overfull \hbox (0.80226pt too wide) in paragraph at lines 204--214
+ [][] 
+ []
+
+
+Underfull \vbox (badness 1490) has occurred while \output is active []
+
+ [6]
 Overfull \hbox (34.93849pt too wide) has occurred while \output is active
                                     [] []
  []
 
-[7] (./samplepaper.aux)
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 267--267
+[]\T1/cmr/m/n/10 Recognition of frame-works (e.g.,
+ []
+
+<Images/Compra de servidor.pdf, id=49, 455.2441pt x 256.0748pt>
+File: Images/Compra de servidor.pdf Graphic file (type pdf)
+<use Images/Compra de servidor.pdf>
+Package pdftex.def Info: Images/Compra de servidor.pdf  used on input line 291.
+(pdftex.def)             Requested size: 173.56177pt x 97.62982pt.
+[8]
+Overfull \hbox (34.93849pt too wide) has occurred while \output is active
+                                    [] []
+ []
+
+[9 <./Images/Compra de servidor.pdf>]
+Overfull \hbox (24.11305pt too wide) in paragraph at lines 400--404
+[]\T1/cmr/m/n/9 Cambridge Dic-tio-nary: \T1/cmr/m/it/9 Hype\T1/cmr/m/n/9 . https://dictionary.cambridge.org/dictionary/english/hype,
+ []
+
+[10]
+Overfull \hbox (34.93849pt too wide) has occurred while \output is active
+                                    [] []
+ []
+
+[11] (./samplepaper.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -286,18 +371,18 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3145 strings out of 467533
- 50377 string characters out of 5422139
- 477373 words of memory out of 5000000
- 32050 multiletter control sequences out of 15000+600000
- 638430 words of font info for 59 fonts, out of 8000000 for 9000
+ 3246 strings out of 467533
+ 52140 string characters out of 5422139
+ 485801 words of memory out of 5000000
+ 32145 multiletter control sequences out of 15000+600000
+ 639105 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,7n,65p,757b,437s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,10n,65p,819b,435s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbi1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb>
-Output written on samplepaper.pdf (7 pages, 303758 bytes).
+Output written on samplepaper.pdf (11 pages, 331107 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
+ 145 PDF objects out of 1000 (max. 8388607)
+ 92 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

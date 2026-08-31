@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1787778540.98745 "/home/riseghost/LegionStorage/ShortPaper/riseghost/samplepaper.tex" "samplepaper.pdf" "samplepaper" 1787778541.53077 0
+["pdflatex"] 1788209360.95284 "/home/riseghost/LegionStorage/ShortPaper/riseghost/samplepaper.tex" "samplepaper.pdf" "samplepaper" 1788209361.52723 0
   "/etc/texmf/web2c/texmf.cnf" 1777608529.5952 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/riseghost/LegionStorage/ShortPaper/riseghost/samplepaper.tex" 1787778540.66821 20513 af68ea0e71ea1d44f372bb752b2ddfcf ""
+  "/home/riseghost/LegionStorage/ShortPaper/riseghost/samplepaper.tex" 1788209360.55656 29945 db8dee9f48996379dec89f15dd86a7c7 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbi1000.tfm" 1136768653 3072 e6fe53b666f9cbd66cb135c6fdea66d3 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx0900.tfm" 1136768653 3584 1a7de6c99457381c64abc1a7c545505f ""
@@ -15,7 +15,9 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecti0900.tfm" 1136768653 3072 a603fa6d934ebc72197ed1c389943d86 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecti1000.tfm" 1136768653 3072 3bce340d4c075dffe6d4ec732b4c32fe ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ectt0900.tfm" 1136768653 1536 ae7aab2f8a4bc9edfce2899f53ba88c3 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcbx1000.tfm" 1136768653 1536 30fde759286ded71559881bfa2623939 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm0900.tfm" 1136768653 1536 c4f439db76ef96a9c53bc437f35ffe20 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm" 1136768653 1524 d89e2d087a9828407a196f428428ef4a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1136768653 1300 b62933e007d01cfd073f79b963c01526 ""
@@ -36,6 +38,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty" 1761946296 5275 6f9d359641b36842524cdb97716ab75f ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo" 1748806692 8448 686612a86f0e04f41ea577f5ec7e83d8 ""
   "/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
+  "/usr/share/texlive/texmf-dist/tex/latex/float/float.sty" 1137110151 6749 16d2656a1984957e674b149555f1ea1d ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1465944070 1224 978390e9c2234eab29404bc21b268d1e ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def" 1759176675 19626 23e2822b9b2b5005f4c549ca98b9334d ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty" 1748806692 18363 69bb4f5538964bfea50d1e6d89cbe69f ""
@@ -62,10 +65,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1769369718 41603 27f93b3067076450172040dcd57ca8b3 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1777608924 5541477 3118940318599480888143717dd32d64 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1777609085 3641282 a015f591937ceced212075108f32bd17 ""
+  "Images/Compra de servidor.pdf" 1787960598.29094 11343 82d2fa513ff03b98a5e4c1f049540370 ""
   "Images/trends.pdf" 1785722770.12708 22482 9e9d232647e54f4e2c3ed29dcca37e39 ""
   "llncs.cls" 1784812658.24422 43402 5fb5a2dc40571aa40f3d199c00cbb986 ""
-  "samplepaper.aux" 1787778541.44921 3174 25f8970a2525b43255e949a96c71f1b6 "pdflatex"
-  "samplepaper.tex" 1787778540.66821 20513 af68ea0e71ea1d44f372bb752b2ddfcf ""
+  "samplepaper.aux" 1788209361.44169 4709 0b6aa81d21c88c2ca36c8d8bfddac80e "pdflatex"
+  "samplepaper.tex" 1788209360.55656 29945 db8dee9f48996379dec89f15dd86a7c7 ""
   (generated)
   "samplepaper.aux"
   "samplepaper.log"
