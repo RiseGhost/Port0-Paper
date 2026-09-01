@@ -59,8 +59,7 @@ ABC Institute, Rupert-Karls-University Heidelberg, Heidelberg, Germany\\
 \maketitle              % typeset the header of the contribution
 %
 \begin{abstract}
-The abstract should briefly summarize the contents of the paper in
-150--250 words.
+This paper presents the design, development, and evaluation of Port 0, a resource management video game intended to foster direct and indirect learning in data center management and computer science fundamentals. Set in a science-fiction environment, the game combines server hardware configuration, command-line minigames, and dynamic DDoS defense loops to engage players while introducing core technical concepts. An evaluation conducted with 25 participants across diverse technical backgrounds demonstrated measurable knowledge acquisition in topics directly integrated into gameplay, such as server architectures, operating systems, software deployment, and cyberattack mitigation. Conversely, technical concepts not embedded in the mechanics showed no knowledge gain, confirming that learning outcomes stemmed directly from game interaction. Usability feedback analyzed through Nielsen's \cite{nielsen1994enhancing} heuristics and telemetry data collected via Firebase provided key insights into player behavior, helping refine interface design and gameplay balance. The results indicate that mechanics-driven simulation games serve as an effective pedagogical tool to bridge engagement and technical learning.
 
 \keywords{Data centers simulation \and Management in data centers \and Simulation games \and Game-Based Learning.}
 \end{abstract}
@@ -93,7 +92,7 @@ Several titles, such as CodeCombat, Manufactoria, and Labor Support Game, employ
 
 In CodeCombat, for example, the developers implemented a split-screen interface where the code is highlighted line by line while the hero performs the corresponding actions on screen, allowing players to directly observe the outcome of each command \cite{villareale2020}.
 
-A similar approach to CodeCombat was adopted to convey the meaning of commands within the WordRush minigame. This minigame is discussed in Subsection \ref{Development of XX game}.
+A similar approach to CodeCombat was adopted to convey the meaning of commands within the WordRush minigame. This minigame is discussed in Subsection \ref{Design and development of Port 0 game}.
 
 % Applying this concept to the developed project, elements such as the word minigame, in which the player must type a sequence of falling words in the correct order, are intended to simulate entering commands into a server terminal and can therefore be considered an example of observational learning.
 
@@ -196,7 +195,7 @@ Finally, the combat system is responsible for managing the hacker attacks that o
 
 \subsection{Evaluation Methodology}
 
-To evaluate the developed project, two questionnaires were applied — one before and another after the game session — aimed at measuring the participants' increase in knowledge. In this session, the player's goal was to reach the 1st DDoS attack.
+To evaluate the developed project, two questionnaires were applied (one before and another after the game session) aimed at measuring the participants' increase in knowledge. In this session, the player's goal was to reach the 1st DDoS attack.
 Simultaneously, the game sessions were observed to identify usage patterns and opportunities for UX improvement, analyzed according to Nielsen's usability heuristics \cite{nielsen1994enhancing}, chosen because they were specifically developed to evaluate user experience. Telemetry data was also automatically collected through the Firebase platform, allowing the identification of anomalous interaction times at different moments of gameplay.
 
 \begin{table}[H]
@@ -254,7 +253,7 @@ The sample consists of 25 individuals of various genders and ages ranging from u
 
 The comparison between pre- and post-game responses reveals consistent knowledge gains in areas directly addressed by the game, namely hardware components (CPU and hard drives), architectures (highlighting ARM, whose recommendation appears in the shop associated with energy savings), CPU brands (IBM), operating systems (Linux), web frameworks, and software installation methods. Table \ref{Tab:Lean} summarizes the most significant variations.
 
-In contrast, Ransomware recognition remained unchanged (18 responses before and after), which is consistent with the fact that this attack is not directly addressed in the game — unlike DDoS, whose recognition increased by 41.2\% (from 17 to 24 correct responses). This suggests that knowledge gains are concentrated on content effectively taught through the gameplay experience, rather than a generic and non-specific improvement.
+In contrast, Ransomware recognition remained unchanged (18 responses before and after), which is consistent with the fact that this attack is not directly addressed in the game, unlike DDoS, whose recognition increased by 41.2\% (from 17 to 24 correct responses). This suggests that knowledge gains are concentrated on content effectively taught through the gameplay experience, rather than a generic and non-specific improvement.
 
 
 
@@ -296,13 +295,13 @@ On the other hand, the attack duration (combat minigame) presents moderate varia
 
 \subsection{Summary}
 
-Overall, the results in Chapter 5 suggest that the game contributes to a measurable increase in technical knowledge specifically related to the content covered (hardware, architectures, operating systems, frameworks, and DDoS attacks), with no equivalent effect on unaddressed topics (Ransomware). The usability analysis (Nielsen's heuristics) identified concrete issues, mostly regarding visual feedback and feature discoverability, which were resolved with targeted solutions. Telemetry data shows heterogeneous performance in initial tasks (server purchase) but greater consistency in core game mechanics (attack), suggesting effective learning of the primary mechanics throughout the session.
+Overall, the results suggest that the game contributes to a measurable increase in technical knowledge specifically related to the content covered (hardware, architectures, operating systems, frameworks, and DDoS attacks), with no equivalent effect on unaddressed topics (Ransomware). The usability analysis (Nielsen's heuristics) identified concrete issues, mostly regarding visual feedback and feature discoverability, which were resolved with targeted solutions. Telemetry data shows heterogeneous performance in initial tasks (server purchase) but greater consistency in core game mechanics (attack), suggesting effective learning of the primary mechanics throughout the session.
 
 \section{Conclusion}
 
 This paper presented an evaluation of \textbf{Port 0}, a resource management simulation game designed to foster both direct and indirect learning within data center management and foundational technology concepts. By integrating mechanics such as server hardware configuration, command-line minigames, and dynamic DDoS defense loops, the game aims to provide an engaging educational experience without sacrificing commercial entertainment value. 
 
-The empirical evaluation, conducted with a sample of 25 participants across varied technical backgrounds, demonstrates that interactive simulation mechanics can lead to measurable knowledge acquisition. Post-game assessments revealed notable improvements in technical areas explicitly embedded in gameplay—such as server architecture awareness, operating system commands, software deployment, and cyberattack mitigation—while domain concepts omitted from the game mechanics showed no change. Furthermore, telemetry data and usability evaluations based on Nielsen’s \cite{nielsen1994enhancing} heuristics proved essential for identifying user experience bottlenecks, enabling iterative interface and feedback improvements.
+The empirical evaluation, conducted with a sample of 25 participants across varied technical backgrounds, demonstrates that interactive simulation mechanics can lead to measurable knowledge acquisition. Post-game assessments revealed notable improvements in technical areas explicitly embedded in gameplay like such as server architecture awareness, operating system commands, software deployment, and cyberattack mitigation, while domain concepts omitted from the game mechanics showed no change. Furthermore, telemetry data and usability evaluations based on Nielsen’s \cite{nielsen1994enhancing} heuristics proved essential for identifying user experience bottlenecks, enabling iterative interface and feedback improvements.
 
 Overall, the findings suggest that contextualized, mechanics-driven video games serve as effective pedagogical tools for technical education. Future work will focus on expanding the scope of operational challenges within \textbf{Port 0}, introducing advanced security scenarios such as ransomware mitigation, and conducting longitudinal studies with larger cohort groups to assess long-term knowledge retention.
 
