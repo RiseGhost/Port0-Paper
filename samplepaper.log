@@ -1,10 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.1)  1 SEP 2026 15:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025/Debian) (preloaded format=pdflatex 2026.5.1)  3 SEP 2026 01:40
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**/home/riseghost/LegionStorage/ShortPaper/riseghost/samplepaper.tex
-(/home/riseghost/LegionStorage/ShortPaper/riseghost/samplepaper.tex
+**samplepaper.tex
+(./samplepaper.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (./llncs.cls
@@ -26,7 +25,8 @@ File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
-) (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
 \c@tracingmulticols=\count283
 \mult@box=\box53
@@ -96,7 +96,8 @@ Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
 \colbreak@box=\box98
 \mc@col@check@num=\count292
 \g__mc_curr_col_int=\count293
-) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/aliascnt.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/aliascnt.sty
 Package: aliascnt 2018/09/07 v1.5 Alias counters (HO)
 )
 \c@chapter=\count294
@@ -150,25 +151,37 @@ LaTeX Info: Redefining \vec on input line 394.
 \c@solution=\count312
 \c@remark=\count313
 \headlineindent=\dimen170
-) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2026/01/18 v26.1 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2026/01/18 v26.1 The multilingual framework for LuaLaTeX, pdfLaT
+eX and XeLaTeX
 \babel@savecnt=\count314
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2080.
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2082.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2083.
-LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2084.
-LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2086.
-LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
+ne 2078.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
+ne 2080.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
+e 2082.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
+e 2083.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
+on input line 2084.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
+on input line 2086.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
+on input line 2111.
 \U@D=\dimen171
 \l@unhyphenated=\language90
- (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count315
- (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex)
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex)
 Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 4330.
- (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: Hyphen rules for 'canadian' set to \l@english
 (babel)             (\language0). Reported on input line 102.
@@ -176,37 +189,47 @@ Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
 (babel)             (\language50). Reported on input line 105.
 Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
 (babel)             (\language50). Reported on input line 108.
-)) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks21
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
- (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen172
 \Gin@req@width=\dimen173
-) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count316
 \float@exts=\toks22
 \float@box=\box101
 \@float@everytoks=\toks23
 \@floatcapt=\box102
-) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+)
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count317
-) (./samplepaper.aux)
+)
+(./samplepaper.aux)
 \openout1 = `samplepaper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
@@ -223,7 +246,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
 LaTeX Font Info:    ... okay on input line 24.
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count318
 \scratchdimen=\dimen174
@@ -238,9 +262,12 @@ LaTeX Font Info:    ... okay on input line 24.
 \everyMPtoPDFconversion=\toks25
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 59.
@@ -250,9 +277,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 59.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 59.
- [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [2]
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
+dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-su
+per-ts1.enc}] [2]
 Overfull \hbox (34.93849pt too wide) has occurred while \output is active
                                     [] []
  []
@@ -261,68 +291,65 @@ Overfull \hbox (34.93849pt too wide) has occurred while \output is active
 <Images/trends.pdf, id=25, 665.79446pt x 375.57637pt>
 File: Images/trends.pdf Graphic file (type pdf)
 <use Images/trends.pdf>
-Package pdftex.def Info: Images/trends.pdf  used on input line 139.
-(pdftex.def)             Requested size: 347.12354pt x 195.8166pt.
+Package pdftex.def Info: Images/trends.pdf  used on input line 140.
+(pdftex.def)             Requested size: 260.34265pt x 146.85815pt.
  [4 <./Images/trends.pdf>]
 Overfull \hbox (34.93849pt too wide) has occurred while \output is active
                                     [] []
  []
 
-[5]
-Underfull \vbox (badness 2237) has occurred while \output is active []
-
- [6]
-Underfull \hbox (badness 10000) in paragraph at lines 206--206
+[5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 207--207
 []\T1/cmr/m/n/9 Lack of \T1/cmr/m/it/9 feed-back
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--206
+Underfull \hbox (badness 10000) in paragraph at lines 207--207
 \T1/cmr/m/n/9 in sound sys-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--206
+Underfull \hbox (badness 10000) in paragraph at lines 207--207
 \T1/cmr/m/n/9 tem/notifications/CPU
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 206--206
+Underfull \hbox (badness 1360) in paragraph at lines 207--207
 []\T1/cmr/m/n/9 Visibility of sys-tem
  []
 
 
-Underfull \hbox (badness 2452) in paragraph at lines 207--207
+Underfull \hbox (badness 2452) in paragraph at lines 208--208
 \T1/cmr/m/n/9 dom / Con-sis-tency
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--208
+Underfull \hbox (badness 10000) in paragraph at lines 209--209
 []\T1/cmr/m/n/9 Recognition rather
  []
 
 
-Underfull \hbox (badness 5908) in paragraph at lines 209--209
+Underfull \hbox (badness 5908) in paragraph at lines 210--210
 \T1/cmr/m/n/9 tem and the real
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 210--210
+Underfull \hbox (badness 10000) in paragraph at lines 211--211
 []\T1/cmr/m/n/9 Lack of \T1/cmr/m/it/9 feed-back \T1/cmr/m/n/9 in
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 210--210
+Underfull \hbox (badness 1360) in paragraph at lines 211--211
 []\T1/cmr/m/n/9 Visibility of sys-tem
  []
 
 
-Underfull \hbox (badness 1552) in paragraph at lines 211--211
+Underfull \hbox (badness 1552) in paragraph at lines 212--212
 []\T1/cmr/m/n/9 Addition of cam-era zoom
  []
 
 
-Overfull \hbox (0.80226pt too wide) in paragraph at lines 203--213
+Overfull \hbox (0.80226pt too wide) in paragraph at lines 204--214
  [][] 
  []
 
@@ -332,23 +359,54 @@ Overfull \hbox (34.93849pt too wide) has occurred while \output is active
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 266--266
-[]\T1/cmr/m/n/10 Recognition of frame-works (e.g.,
- []
-
 <Images/Compra de servidor.pdf, id=49, 455.2441pt x 256.0748pt>
 File: Images/Compra de servidor.pdf Graphic file (type pdf)
 <use Images/Compra de servidor.pdf>
-Package pdftex.def Info: Images/Compra de servidor.pdf  used on input line 290.
-(pdftex.def)             Requested size: 173.56177pt x 97.62982pt.
-[8]
+Package pdftex.def Info: Images/Compra de servidor.pdf  used on input line 294.
+
+(pdftex.def)             Requested size: 260.34265pt x 146.44865pt.
+ [8]
+Underfull \vbox (badness 3758) has occurred while \output is active []
+
+
 Overfull \hbox (34.93849pt too wide) has occurred while \output is active
                                     [] []
  []
 
 [9 <./Images/Compra de servidor.pdf>] [10]
-Overfull \hbox (24.11305pt too wide) in paragraph at lines 399--403
-[]\T1/cmr/m/n/9 Cambridge Dic-tio-nary: \T1/cmr/m/it/9 Hype\T1/cmr/m/n/9 . https://dictionary.cambridge.org/dictionary/english/hype,
+Underfull \hbox (badness 10000) in paragraph at lines 404--407
+[]\T1/cmr/m/n/9 CodeCombat Inc.: \T1/cmr/m/it/9 Code-Com-bat\T1/cmr/m/n/9 . On-
+line ed-u-ca-tional game,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 409--412
+[]\T1/cmr/m/n/9 PleasingFungus Games: \T1/cmr/m/it/9 Man-u-fac-to-ria 2022\T1/c
+mr/m/n/9 . Video
+ []
+
+
+Overfull \hbox (89.0639pt too wide) in paragraph at lines 409--412
+\T1/cmr/m/n/9 game,Steam,https://store.steampowered.com/app/1276070/Manufactori
+a_2022/,lastaccessed2026/09/03 
+ []
+
+
+Underfull \hbox (badness 3568) in paragraph at lines 415--418
+[]\T1/cmr/m/n/9 Chang, C.-Y., et al.: \T1/cmr/m/it/9 La-bor Sup-port Game\T1/cm
+r/m/n/9 : Sce-nario game-based learn-
+ []
+
+
+Underfull \hbox (badness 1783) in paragraph at lines 415--418
+\T1/cmr/m/n/9 ing sys-tem for nurs-ing train-ing. In-ter-ac-tive Learn-ing En-v
+i-ron-ments (2024).
+ []
+
+
+Overfull \hbox (24.11305pt too wide) in paragraph at lines 420--424
+[]\T1/cmr/m/n/9 Cambridge Dic-tio-nary: \T1/cmr/m/it/9 Hype\T1/cmr/m/n/9 . http
+s://dictionary.cambridge.org/dictionary/english/hype,
  []
 
 
@@ -363,18 +421,29 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3245 strings out of 467533
- 52116 string characters out of 5422139
- 484801 words of memory out of 5000000
- 32144 multiletter control sequences out of 15000+600000
- 639105 words of font info for 61 fonts, out of 8000000 for 9000
+ 3246 strings out of 467533
+ 52006 string characters out of 5422139
+ 485820 words of memory out of 5000000
+ 32147 multiletter control sequences out of 15000+600000
+ 638771 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,10n,65p,1308b,437s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbi1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb>
-Output written on samplepaper.pdf (11 pages, 332103 bytes).
+ 57i,10n,65p,1257b,437s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type
+1/public/cm-super/sfbi1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
+bx0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/sha
+re/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1
+/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfr
+m0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/shar
+e/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/type1/
+public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt
+0900.pfb>
+Output written on samplepaper.pdf (11 pages, 334159 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
+ 142 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

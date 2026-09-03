@@ -68,6 +68,7 @@ This paper presents the design, development, and evaluation of Port 0, a resourc
 %
 \section{Introduction}
 
+
 The video game industry has experienced substantial growth over the past decade. In many countries, its economic impact has already surpassed that of traditional media sectors such as film, television, and newspapers. As the industry continues to expand in both scale and relevance, the application of video games increasingly extends beyond entertainment.
 
 Serious games and simulation-based games provide players with interactive experiences that incorporate educational content. However, studies such as \textit{Game-Based Learning with Computers: Learning, Simulations} \cite{Martens2008} demonstrate that even games developed exclusively for entertainment require players to acquire new knowledge, develop complex skills, and devise effective strategies in order to progress through levels and overcome challenges.
@@ -88,11 +89,11 @@ Therefore, throughout this section, the objective is to analyze the learning str
 
 Learning through observation, also referred to as observational learning, is the process by which beginners absorb rules, initial steps, and complex procedures simply by watching experienced players or interacting with simulations and/or tutorials \cite{Martens2008}. When integrated into video games or simulation systems, this type of learning acts as a pedagogical "scaffold" for the learner \cite{Martens2008}.
 
-Several titles, such as CodeCombat, Manufactoria, and Labor Support Game, employ this learning strategy.
+Several titles, such as CodeCombat \cite{codecombat}, Manufactoria \cite{manufactoria}, and Labor Support Game \cite{labor_support_game}, employ this learning strategy.
 
-In CodeCombat, for example, the developers implemented a split-screen interface where the code is highlighted line by line while the hero performs the corresponding actions on screen, allowing players to directly observe the outcome of each command \cite{villareale2020}.
+In CodeCombat \cite{codecombat}, for example, the developers implemented a split-screen interface where the code is highlighted line by line while the hero performs the corresponding actions on screen, allowing players to directly observe the outcome of each command \cite{villareale2020}.
 
-A similar approach to CodeCombat was adopted to convey the meaning of commands within the WordRush minigame. This minigame is discussed in Subsection \ref{Design and development of Port 0 game}.
+A similar approach to CodeCombat \cite{codecombat} was adopted to convey the meaning of commands within the WordRush minigame. This minigame is discussed in Subsection \ref{Design and development of Port 0 game}.
 
 % Applying this concept to the developed project, elements such as the word minigame, in which the player must type a sequence of falling words in the correct order, are intended to simulate entering commands into a server terminal and can therefore be considered an example of observational learning.
 
@@ -136,7 +137,7 @@ To evaluate the hype surrounding topics such as \textit{technology} and \textit{
 
 \begin{figure}
     \centering
-    \includegraphics[width=\linewidth]{Images/trends.pdf}
+    \includegraphics[width=0.75\linewidth]{Images/trends.pdf}
     \caption{Relative Search Interest for \textit{Data Center} and \textit{Technology}.}
     \label{fig:trends}
 \end{figure}
@@ -157,7 +158,7 @@ Therefore, the developed project, \textit{\textbf{Port 0}}, has strong learning 
 
 \subsection{Design of Port 0 game}
 
-The game concept can be described as follows: a fantasy setting with science-fiction elements in which the player takes on the role of an engineer working in an environment inspired by a data centre. The player's primary responsibility is to perform technical tasks. The main tasks are to buy and configure the hardware used in a data center, taking into account several aspects, such as for example, the processing capacity, the energy aspects, etc. Outher tasks are presented in the form of word-based minigames, in which the player must write a set of commands with a specific purpose. In addition, the player must defend the data centre from attacks using a cannon.
+The game concept can be described as follows: a fantasy setting with science-fiction elements in which the player takes on the role of an engineer working in an environment inspired by a data centre. The player's primary responsibility is to perform technical tasks. The main tasks are to buy and configure the hardware used in a data center, taking into account several aspects, such as for example, the processing capacity, the energy aspects, etc. Other tasks are presented in the form of word-based minigames, in which the player must write a set of commands with a specific purpose. In addition, the player must defend the data centre from attacks using a cannon.
 
 The game also features several gameplay loops, among which the task loop and the attack loop stand out. The task loop is the most common and longest-lasting loop. During this loop, the player receives requests from clients and must choose whether to accept or reject them. If a request is accepted, the player must complete a word-based minigame inspired by entering commands in a terminal, in which a set of commands must be written to complete the task. In the attack loop, on the other hand, the player must use a cannon to defend the data centre from hordes of enemies attempting to attack the facility.
 
@@ -195,8 +196,8 @@ Finally, the combat system is responsible for managing the hacker attacks that o
 
 \subsection{Evaluation Methodology}
 
-To evaluate the developed project, two questionnaires were applied (one before and another after the game session) aimed at measuring the participants' increase in knowledge. In this session, the player's goal was to reach the 1st DDoS attack.
-Simultaneously, the game sessions were observed to identify usage patterns and opportunities for UX improvement, analyzed according to Nielsen's usability heuristics \cite{nielsen1994enhancing}, chosen because they were specifically developed to evaluate user experience. Telemetry data was also automatically collected through the Firebase platform, allowing the identification of anomalous interaction times at different moments of gameplay.
+To evaluate the developed game, two questionnaires were applied (one before and another after the game session) aimed at measuring the participants' increase in knowledge. In the game session, the player's goal was to reach the 1st DDoS attack.
+Simultaneously, the game sessions were observed to identify usage patterns and opportunities for UX improvement, analyzed according to Nielsen's usability heuristics \cite{nielsen1994enhancing}, chosen because they were specifically developed to evaluate user experience, as shown in the Table \ref{tab:DadosNielsen}. Telemetry data was also automatically collected through the Firebase platform, allowing the identification of anomalous interaction times at different moments of gameplay.
 
 \begin{table}[H]
     \centering
@@ -217,7 +218,7 @@ Simultaneously, the game sessions were observed to identify usage patterns and o
 
 \subsection{Sample Characterization}
 
-The sample consists of 25 individuals of various genders and ages ranging from under 18 to over 30 years old, mostly concentrated between 18 and 29 years old (21 out of 25 participants). Regarding prior knowledge in computer science, 52\% of the sample has an academic background in the area, while the remaining 48\% have only user-level knowledge or none at all. This factor is relevant, as participants with prior training tend to show a less pronounced knowledge gain.
+The sample consists of 25 individuals of various genders and ages ranging from under 18 to over 30 years old, mostly concentrated between 18 and 29 years old (21 out of 25 participants), as shown in the Table \ref{tab:Faixa_Idades}. Regarding prior knowledge in computer science, 52\% of the sample has an academic background in the area, while the remaining 48\% have only user-level knowledge or none at all (see Table \ref{tab:Conhecimentos}). This factor is relevant, as participants with prior training tend to show a less pronounced knowledge gain.
 
 \begin{table}[htbp]
     \centering
@@ -255,40 +256,44 @@ The comparison between pre- and post-game responses reveals consistent knowledge
 
 In contrast, Ransomware recognition remained unchanged (18 responses before and after), which is consistent with the fact that this attack is not directly addressed in the game, unlike DDoS, whose recognition increased by 41.2\% (from 17 to 24 correct responses). This suggests that knowledge gains are concentrated on content effectively taught through the gameplay experience, rather than a generic and non-specific improvement.
 
-
-
-\begin{tabular}{|p{6cm}|c|}
-    \hline
-    \textbf{Evaluated knowledge indicator} & \textbf{Variation (before → after)} \\ \hline
-    Recognition of IBM as a CPU brand & 8\% → 48\%  (+40 p.p.) \\ \hline
-    Recognition of Linux as an operating system & 76\% → 88\%  (+12 p.p.) \\ \hline
-    Recognition of the ARM architecture & 56\% → 84\%  (+28 p.p.) \\ \hline
-    Recognition of frameworks (e.g., Apache) & 48\% → 72\%  (+24 p.p.) \\ \hline
-    Software installation via terminal (correct answer) & 15 → 24  (+60\%) \\ \hline
-    Recognition of DDoS attack & 17 → 24  (+41.2\%) \\ \hline
-\end{tabular}
-\label{Tab:Lean}
+\begin{table}[H]
+    \begin{tabular}{|p{6cm}|c|}
+        \hline
+        \textbf{Evaluated knowledge indicator} & \textbf{Variation (before → after)} \\ \hline
+        Recognition of IBM as a CPU brand & 8\% → 48\%  (+40 p.p.) \\ \hline
+        Recognition of Linux as an operating system & 76\% → 88\%  (+12 p.p.) \\ \hline
+        Recognition of the ARM architecture & 56\% → 84\%  (+28 p.p.) \\ \hline
+        Recognition of frameworks (e.g., Apache) & 48\% → 72\%  (+24 p.p.) \\ \hline
+        Software installation via terminal (correct answer) & 15 → 24  (+60\%) \\ \hline
+        Recognition of DDoS attack & 17 → 24  (+41.2\%) \\ \hline
+    \end{tabular}
+    \caption{Increase of knowledge}
+    \label{Tab:Lean}
+\end{table}
 
 \subsection{Analytical Data Analysis (Telemetry)}
 
-Telemetry data collected via Firebase allowed the calculation of descriptive statistics (mean, standard deviation, and coefficient of variation, CV) for the main player actions:
+Telemetry data collected via Firebase allowed the calculation of descriptive statistics (mean, standard deviation, and coefficient of variation, CV) for the main player actions, as show in the Table \ref{Tab:TelemetricData}:
 
+\begin{table}[H]
+    \begin{tabular}{|p{6cm}|p{4cm}|}
+        \hline
+        \textbf{Analytical metric (time)} & \textbf{Mean | Standard deviation | CV} \\ \hline
+        Purchase of 1st server & 125.94 s | 84.88 s | 67.39\%\\ \hline
+        Attack duration (1st DDoS attack) & 85.33 s | 25.11 s | 29.42\% \\ \hline
+        Total time until the end of the 1st attack & 85.33 s | 25.11 s | 29.42\% \\ \hline
+    \end{tabular}
+    \caption{Analytical telemetry data}
+    \label{Tab:TelemetricData}
+\end{table}
 
-\begin{tabular}{|p{6cm}|p{4cm}|}
-    \hline
-    \textbf{Analytical metric (time)} & \textbf{Mean | Standard deviation | CV} \\ \hline
-    Purchase of 1st server & 125.94 s | 84.88 s | 67.39\%\\ \hline
-    Attack duration (1st DDoS attack) & 85.33 s | 25.11 s | 29.42\% \\ \hline
-    Total time until the end of the 1st attack & 85.33 s | 25.11 s | 29.42\% \\ \hline
-\end{tabular}
-\label{Tab:TelemetricData}
-
-The purchase of the first server shows the highest variability (CV of 67.39\%), possibly associated with the heterogeneity of the sample's prior computer science experience, resulting in participants with formal education in the area executing this task faster, although the data does not allow establishing a direct causal relationship.
+The purchase of the first server shows the highest variability (CV of 67.39\%), possibly associated with the heterogeneity of the sample's prior computer science experience, resulting in participants with formal education in the area executing this task faster, although the data does not allow establishing a direct causal relationship, as show in Figure \ref{fig:TimeByServer}.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.5\linewidth]{Images/Compra de servidor.pdf}
+    \includegraphics[width=0.75\linewidth]{Images/Compra de servidor.pdf}
     \caption{Time required for players to purchase the first server (high dispersion relative to the mean).}
+    \label{fig:TimeByServer}
 \end{figure}
 
 On the other hand, the attack duration (combat minigame) presents moderate variability (CV of 29.42\%), lower than that observed in other actions. This result is attributed to the straightforward and familiar nature of this mechanic, similar to mechanics found in other video games. The total time until the completion of the 1st attack (CV of 35.90\%) reveals, through the average trendline, two distinct performance groups, reflecting the diversity of the sample. Finally, the WordRush word minigame presented average times between 30 seconds and 1m30s per category, an interval considered positive for avoiding predictability without making tasks overly long.
@@ -394,6 +399,22 @@ Video game. Hello Games, Guildford (2016)
 Nintendo EPD:
 \textit{The Legend of Zelda: Breath of the Wild}.
 Video game. Nintendo, Kyoto (2017)
+
+\bibitem{codecombat}
+CodeCombat Inc.:
+\textit{CodeCombat}.
+Online educational game, \url{https://codecombat.com/}, last accessed 2026/09/03
+
+\bibitem{manufactoria}
+PleasingFungus Games:
+\textit{Manufactoria 2022}.
+Video game,Steam,\url{https://store.steampowered.com/app/1276070/Manufactoria\_2022/},lastaccessed2026/09/03
+
+
+\bibitem{labor_support_game}
+Chang, C.-Y., et al.:
+\textit{Labor Support Game}: Scenario game-based learning system for nursing training.
+Interactive Learning Environments (2024). \doi{10.1080/10494820.2024.2308092}
 
 \bibitem{CambridgeHype}
 Cambridge Dictionary:

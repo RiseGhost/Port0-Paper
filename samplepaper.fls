@@ -87,8 +87,7 @@ INPUT ./Images/trends.pdf
 INPUT ./Images/trends.pdf
 INPUT ./Images/trends.pdf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecti0900.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcbx1000.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcbx0900.tfm
 INPUT ./Images/Compra de servidor.pdf
 INPUT ./Images/Compra de servidor.pdf
 INPUT ./Images/Compra de servidor.pdf
