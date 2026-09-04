@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1788396023.02227 "/home/riseghost/LegionStorage/ShortPaper/riseghost/samplepaper.tex" "samplepaper.pdf" "samplepaper" 1788396023.60381 0
+["pdflatex"] 1788472792.97711 "/home/riseghost/LegionStorage/ShortPaper/riseghost/samplepaper.tex" "samplepaper.pdf" "samplepaper" 1788472794.31604 0
   "/etc/texmf/web2c/texmf.cnf" 1777608529.5952 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/riseghost/LegionStorage/ShortPaper/riseghost/samplepaper.tex" 1788396022.69291 32175 392baa945d92efeba88ec58770125ab3 ""
+  "/home/riseghost/LegionStorage/ShortPaper/riseghost/samplepaper.tex" 1788472792.55918 32948 2fee3237fd1eb088629c282bd406af58 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbi1000.tfm" 1136768653 3072 e6fe53b666f9cbd66cb135c6fdea66d3 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx0900.tfm" 1136768653 3584 1a7de6c99457381c64abc1a7c545505f ""
@@ -64,11 +64,14 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1769369718 41603 27f93b3067076450172040dcd57ca8b3 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1777608924 5541477 3118940318599480888143717dd32d64 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1777609085 3641282 a015f591937ceced212075108f32bd17 ""
+  "Images/Cenario.png" 1788470125.21019 2809133 a29aa5bee7737ac630b705e1489ce532 ""
   "Images/Compra de servidor.pdf" 1787960598.29094 11343 82d2fa513ff03b98a5e4c1f049540370 ""
+  "Images/MiniGamesAverageTime.pdf" 1788472662.06223 12192 15a88763418cb142ad66b4df7dd2b6ac ""
+  "Images/WordRush.png" 1788470125.73918 136954 ac8dc435160a5d330f8df0c4eab985e1 ""
   "Images/trends.pdf" 1785722770.12708 22482 9e9d232647e54f4e2c3ed29dcca37e39 ""
   "llncs.cls" 1784812658.24422 43402 5fb5a2dc40571aa40f3d199c00cbb986 ""
-  "samplepaper.aux" 1788396023.51518 5229 390ed7203740a3c1324c0af7a12e5d5c "pdflatex"
-  "samplepaper.tex" 1788396022.69291 32175 392baa945d92efeba88ec58770125ab3 ""
+  "samplepaper.aux" 1788472794.22821 5751 2dddab186b8c32516ba4afbb0a692a69 "pdflatex"
+  "samplepaper.tex" 1788472792.55918 32948 2fee3237fd1eb088629c282bd406af58 ""
   (generated)
   "samplepaper.aux"
   "samplepaper.log"
