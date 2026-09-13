@@ -12,6 +12,7 @@
 %
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{array}
 % Used for displaying a sample figure. If possible, figure files should
 % be included in EPS format.
 %
@@ -91,9 +92,9 @@ Learning through observation, also referred to as observational learning, is the
 
 Several titles, such as CodeCombat \cite{codecombat}, Manufactoria \cite{manufactoria}, and Labor Support Game \cite{labor_support_game}, employ this learning strategy.
 
-In CodeCombat \cite{codecombat}, for example, the developers implemented a split-screen interface where the code is highlighted line by line while the hero performs the corresponding actions on screen, allowing players to directly observe the outcome of each command \cite{villareale2020}.
+In CodeCombat, for example, the developers implemented a split-screen interface where the code is highlighted line by line while the hero performs the corresponding actions on screen, allowing players to directly observe the outcome of each command \cite{villareale2020}.
 
-A similar approach to CodeCombat \cite{codecombat} was adopted to convey the meaning of commands within the WordRush minigame. This minigame is discussed in Subsection \ref{Design and development of Port 0 game}.
+A similar approach to CodeCombat was adopted to convey the meaning of commands within the WordRush minigame. This minigame is discussed in Subsection \ref{Design and development of Port 0 game}.
 
 % Applying this concept to the developed project, elements such as the word minigame, in which the player must type a sequence of falling words in the correct order, are intended to simulate entering commands into a server terminal and can therefore be considered an example of observational learning.
 
@@ -279,12 +280,12 @@ In contrast, Ransomware recognition remained unchanged (18 responses before and 
     \begin{tabular}{|p{6cm}|c|}
         \hline
         \textbf{Evaluated knowledge indicator} & \textbf{Variation (before → after)} \\ \hline
-        Recognition of IBM as a CPU brand & 8\% → 48\%  (+40 p.p.) \\ \hline
-        Recognition of Linux as an operating system & 76\% → 88\%  (+12 p.p.) \\ \hline
-        Recognition of the ARM architecture & 56\% → 84\%  (+28 p.p.) \\ \hline
-        Recognition of frameworks (e.g., Apache) & 48\% → 72\%  (+24 p.p.) \\ \hline
-        Software installation via terminal (correct answer) & 15 → 24  (+60\%) \\ \hline
-        Recognition of DDoS attack & 17 → 24  (+41.2\%) \\ \hline
+        Recognition of IBM as a CPU brand & 8\% → 48\% \\ \hline
+        Recognition of Linux as an operating system & 76\% → 88\% \\ \hline
+        Recognition of the ARM architecture & 56\% → 84\% \\ \hline
+        Recognition of frameworks (e.g., Apache) & 48\% → 72\% \\ \hline
+        Software installation via terminal (correct answer) & 15 → 24\\ \hline
+        Recognition of DDoS attack & 17 → 24 \\ \hline
     \end{tabular}
     \caption{Increase of knowledge}
     \label{Tab:Lean}
@@ -292,12 +293,12 @@ In contrast, Ransomware recognition remained unchanged (18 responses before and 
 
 \subsection{Analytical Data Analysis (Telemetry)}
 
-Telemetry data collected via Firebase allowed the calculation of descriptive statistics (mean, standard deviation, and coefficient of variation, CV) for the main player actions, as show in the Table \ref{Tab:TelemetricData}:
+Telemetry data collected via Firebase allowed the calculation of descriptive statistics (mean (M), standard deviation (SD), and coefficient of variation (CV)) for the main player actions, as show in the Table \ref{Tab:TelemetricData}:
 
 \begin{table}[H]
-    \begin{tabular}{|p{6cm}|p{4cm}|}
+    \begin{tabular}{|p{6cm}|>{\centering\arraybackslash}p{4cm}|}
         \hline
-        \textbf{Analytical metric (time)} & \textbf{Mean | Standard deviation | CV} \\ \hline
+        \textbf{Analytical metric (time)} & \textbf{M | SD | CV} \\ \hline
         Purchase of 1st server & 125.94 s | 84.88 s | 67.39\%\\ \hline
         Attack duration (1st DDoS attack) & 85.33 s | 25.11 s | 29.42\% \\ \hline
         Total time until the end of the 1st attack & 85.33 s | 25.11 s | 29.42\% \\ \hline
@@ -336,6 +337,8 @@ The empirical evaluation, conducted with a sample of 25 participants across vari
 
 Overall, the findings suggest that contextualized, mechanics-driven video games serve as effective pedagogical tools for technical education. Future work will focus on expanding the scope of operational challenges within \textbf{Port 0}, introducing advanced security scenarios such as ransomware mitigation, and conducting longitudinal studies with larger cohort groups to assess long-term knowledge retention.
 
+\section{Acknowledgment}
+This work is funded by national funds through FCT – Fundação para a Ciência e a Tecnologia, I.P., and, when eligible, co-funded by EU funds under project/support UID/50008/2025 – Instituto de Telecomunicações
 
 %
 % ---- Bibliography ----
