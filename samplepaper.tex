@@ -60,7 +60,7 @@ ABC Institute, Rupert-Karls-University Heidelberg, Heidelberg, Germany\\
 \maketitle              % typeset the header of the contribution
 %
 \begin{abstract}
-This paper presents the design, development, and evaluation of Port 0, a resource management video game intended to foster direct and indirect learning in data center management and computer science fundamentals. Set in a science-fiction environment, the game combines server hardware configuration, command-line minigames, and dynamic DDoS defense loops to engage players while introducing core technical concepts. An evaluation conducted with 25 participants across diverse technical backgrounds demonstrated measurable knowledge acquisition in topics directly integrated into gameplay, such as server architectures, operating systems, software deployment, and cyberattack mitigation. Conversely, technical concepts not embedded in the mechanics showed no knowledge gain, confirming that learning outcomes stemmed directly from game interaction. Usability feedback analyzed through Nielsen's \cite{nielsen1994enhancing} heuristics and telemetry data collected via Firebase provided key insights into player behavior, helping refine interface design and gameplay balance. The results indicate that mechanics-driven simulation games serve as an effective pedagogical tool to bridge engagement and technical learning.
+This paper presents the design, development, and evaluation of Port 0, a resource management video game intended to foster direct and indirect learning in data center management and computer science fundamentals. Set in a science-fiction environment, the game combines server hardware configuration, command-line minigames, and dynamic DDoS defense loops to engage players while introducing core technical concepts. An evaluation conducted with 25 participants across diverse technical backgrounds showed positive changes in several post-game response in topics directly integrated into gameplay, such as server architectures, operating systems, software deployment, and cyberattack mitigation. Conversely, technical concepts not embedded in the mechanics showed no knowledge gain, confirming that learning outcomes stemmed directly from game interaction. Usability feedback analyzed through Nielsen's \cite{nielsen1994enhancing} heuristics and telemetry data collected via Firebase provided key insights into player behavior, helping refine interface design and gameplay balance. The results indicate that mechanics-driven simulation games show potential pedagogical tool tool to bridge engagement and technical learning.
 
 \keywords{Data centers simulation \and Management in data centers \and Simulation games \and Game-Based Learning.}
 \end{abstract}
@@ -145,13 +145,14 @@ To evaluate the hype surrounding topics such as \textit{technology} and \textit{
 
 The data obtained from \textit{Google Trends} are presented in Figure \ref{fig:trends}, which shows the worldwide relative search interest over time for the topics \textit{data center} and \textit{technology}.
 
-From these data, it can be concluded that both topics have experienced substantial growth over the past five years. Although it may not seem obvious, there is a direct relationship between public interest and the motivation to learn.
+From these data, it can be concluded that both topics have experienced substantial growth over the past five years. Although it may not seem obvious, there is a hypothesis that public interest may be directly related to students’ motivation to learn.
+
 
 Public interest in a particular topic or product may be the result of marketing efforts. When applied to a game and combined with an engaging context, it can increase the player's level of interest even before gameplay begins \cite{Martens2008}.
 
 Furthermore, the technological domain in which the project is situated is itself a motivating factor for learning. Young people aspiring to careers in technology, such as game development, are often attracted to computer science programs because they revolve around an "object of pleasure" (the game) \cite{BaxterWebb2016}.
 
-Therefore, the developed project, \textit{\textbf{Port 0}}, has strong learning potential, both direct and indirect, since it is situated within a field experiencing increasing hype. The attractiveness of an educational game is closely related to its content and to the connection that learners establish with its subject matter \cite{Marques2021}.
+Therefore, the developed project, \textit{\textbf{Port 0}}, was designed to support both direct and indirect learning opportunites, since it is situated within a field experiencing increasing hype. The attractiveness of an educational game is closely related to its content and to the connection that learners establish with its subject matter \cite{Marques2021}.
 
 %
 \section{Design and development of Port 0 game}
@@ -170,11 +171,11 @@ With this in mind, several game design techniques were applied to achieve the in
 \item Hook Model \cite{modelo-hook}.
 \end{itemize}
 
-The MDA Framework \cite{framework-mda} guided Port 0s design by directly embedding its theoretical pillars into the gameplay. Mechanics encompass typing Linux commands in WordRush, configuring server hardware, and operating the defense cannon. These spark Dynamics focused on resource management, balancing task revenue against energy expenses, and adapting to cyberattack interruptions. Ultimately, the Aesthetics deliver a sense of technical mastery and engagement by breaking task monotony with action-packed combat.
+The MDA Framework \cite{framework-mda} guided Port 0's design by directly embedding its theoretical pillars into the gameplay. Mechanics encompass typing Linux commands in WordRush, configuring server hardware, and operating the defense cannon. These spark Dynamics focused on resource management, balancing task revenue against energy expenses, and adapting to cyberattack interruptions. Ultimately, the Aesthetics deliver a sense of technical mastery and engagement by breaking task monotony with action-packed combat.
 
 Flow \cite{flow} was one of the most important techniques, as it provides a framework for measuring and designing an experience capable of keeping the player in a state of flow. This state represents a balance between the player's level of challenge and their abilities, preventing them from becoming either bored or anxious.
 
-The attack loop was specifically designed to help maintain the player in a state of flow. This type of gameplay loop breaks the potentially monotonous task-based gameplay and provides additional stimulation, helping to move the player away from a state of boredom.
+The attack loop was designed to reduce monotony and help balance challenge and player engagement. This type of gameplay loop breaks the potentially monotonous task-based gameplay and provides additional stimulation, helping to move the player away from a state of boredom.
 
 Finally, the Hook Model \cite{modelo-hook} provides a theoretical and practical framework designed to encourage the development of habits through continuous interaction with a product. Furthermore, the model helps define behavioural patterns through which continuous interactions with the product can be encouraged, including in the context of the developed game. For example, visual appeal, appeal/curiosity for the theme and earning money resulting from tasks performed that are paid periodically.
 
@@ -207,7 +208,7 @@ The game is composed of several interconnected systems that work together to cre
 
 Alongside the shop system, an economy system was developed to manage the transactions performed by the player, such as purchases and sales. It also manages periodic transactions, including recurring payments from clients for provided services and expenses such as energy costs.
 
-The task system is responsible for randomly selecting tasks and presenting them to the player. This system enables the player to earn money both actively, by completing new tasks, and passively, through payments generated by previously completed tasks. This system constitutes a continuous gameplay loop that operates throughout the entire gameplay experience. The \textit{WordRush} minigame, in which the player writes a set of Linux commands, is a direct consequence of this system, as completing the minigame is what concludes an accepted task; as show in Figure \ref{WordRush}.
+The task system is responsible for randomly selecting tasks and presenting them to the player. This system enables the player to earn money both actively, by completing new tasks, and passively, through payments generated by previously completed tasks. This system constitutes a continuous gameplay loop that operates throughout the entire gameplay experience. The \textit{WordRush} minigame, in which the player writes a set of Linux commands, is a direct consequence of this system, as completing the minigame is what concludes an accepted task; as shown in Figure \ref{WordRush}.
 
 Finally, the combat system is responsible for managing the hacker attacks that occur throughout the game. It operates periodically, with the primary purpose of breaking the task-based gameplay loop. It acts as a disruptive element that interrupts gameplay that could otherwise become monotonous, introducing greater variety, action, and entertainment to the player's experience.
 
@@ -301,7 +302,7 @@ Telemetry data collected via Firebase allowed the calculation of descriptive sta
         \textbf{Analytical metric (time)} & \textbf{M | SD | CV} \\ \hline
         Purchase of 1st server & 125.94 s | 84.88 s | 67.39\%\\ \hline
         Attack duration (1st DDoS attack) & 85.33 s | 25.11 s | 29.42\% \\ \hline
-        Total time until the end of the 1st attack & 85.33 s | 25.11 s | 29.42\% \\ \hline
+        Total time until the end of the 1st attack & 1144,90 s | 411,01 s | 35,90\% \\ \hline
     \end{tabular}
     \caption{Analytical telemetry data}
     \label{Tab:TelemetricData}
@@ -335,10 +336,14 @@ This paper presented an evaluation of \textbf{Port 0}, a resource management sim
 
 The empirical evaluation, conducted with a sample of 25 participants across varied technical backgrounds, demonstrates that interactive simulation mechanics can lead to measurable knowledge acquisition. Post-game assessments revealed notable improvements in technical areas explicitly embedded in gameplay like such as server architecture awareness, operating system commands, software deployment, and cyberattack mitigation, while domain concepts omitted from the game mechanics showed no change. Furthermore, telemetry data and usability evaluations based on Nielsen’s \cite{nielsen1994enhancing} heuristics proved essential for identifying user experience bottlenecks, enabling iterative interface and feedback improvements.
 
-Overall, the findings suggest that contextualized, mechanics-driven video games serve as effective pedagogical tools for technical education. Future work will focus on expanding the scope of operational challenges within \textbf{Port 0}, introducing advanced security scenarios such as ransomware mitigation, and conducting longitudinal studies with larger cohort groups to assess long-term knowledge retention.
+Overall, the findings suggest that contextualized, mechanics-driven video games showed promise as tools to support technical education. Future work will focus on expanding the scope of operational challenges within \textbf{Port 0}, introducing advanced security scenarios such as ransomware mitigation, and conducting longitudinal studies with larger cohort groups to assess long-term knowledge retention.
 
-\section{Acknowledgment}
-This work is funded by national funds through FCT – Fundação para a Ciência e a Tecnologia, I.P., and, when eligible, co-funded by EU funds under project/support UID/50008/2025 – Instituto de Telecomunicações
+\subsubsection*{Acknowledgment.}
+This work is funded by national funds through FCT –- Fundação para a Ciência e 
+a Tecnologia, I.P., and, when eligible, co-funded by EU funds under project/support UID/50008/2025 –- Instituto de Telecomunicações.
+
+\subsubsection*{Disclosure of Interests.}
+The authors have no competing interests to declare that are relevant to the content of this article.
 
 %
 % ---- Bibliography ----

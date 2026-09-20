@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1788527757.08945 "/home/riseghost/LegionStorage/ShortPaper/riseghost/samplepaper.tex" "samplepaper.pdf" "samplepaper" 1788527758.45102 0
+["pdflatex"] 1789946177.14275 "/home/riseghost/LegionStorage/ShortPaper/riseghost/samplepaper.tex" "samplepaper.pdf" "samplepaper" 1789946178.52194 0
   "/etc/texmf/web2c/texmf.cnf" 1777608529.5952 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/riseghost/LegionStorage/ShortPaper/riseghost/samplepaper.tex" 1788527755.34158 32965 24198a920161a2ec20e2f1248f06cac5 ""
+  "/home/riseghost/LegionStorage/ShortPaper/riseghost/samplepaper.tex" 1789946175.44261 33345 345683631da9d27964f930c53fdee09d ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbi1000.tfm" 1136768653 3072 e6fe53b666f9cbd66cb135c6fdea66d3 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx0900.tfm" 1136768653 3584 1a7de6c99457381c64abc1a7c545505f ""
@@ -47,6 +47,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1761248321 30662 bfd6e864f4ffc5018b0e2b6260c3181c ""
   "/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg" 1279039959 678 4792914a8f45be57bb98413425e4c7af ""
   "/usr/share/texlive/texmf-dist/tex/latex/oberdiek/aliascnt.sty" 1575152444 2652 813491e2bc95c1dafbb39cd7c54b380b ""
+  "/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty" 1761946296 15651 9d7c62df82cb29a555c00550babfe364 ""
   "/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty" 1761946296 33142 efe8f4750fc02524935e7423b4bdef69 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1769369718 41603 27f93b3067076450172040dcd57ca8b3 ""
   "/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1764096569 2971 def0b6c1f0b107b3b936def894055589 ""
@@ -70,8 +71,8 @@
   "Images/WordRush.png" 1788470125.73918 136954 ac8dc435160a5d330f8df0c4eab985e1 ""
   "Images/trends.pdf" 1785722770.12708 22482 9e9d232647e54f4e2c3ed29dcca37e39 ""
   "llncs.cls" 1784812658.24422 43402 5fb5a2dc40571aa40f3d199c00cbb986 ""
-  "samplepaper.aux" 1788527758.33834 5629 a7f4b325bf92ef0864c1af9a5df8685b "pdflatex"
-  "samplepaper.tex" 1788527755.34158 32965 24198a920161a2ec20e2f1248f06cac5 ""
+  "samplepaper.aux" 1789946178.40964 5585 1b8bbdd0812a90812dcbb244115d71d8 "pdflatex"
+  "samplepaper.tex" 1789946175.44261 33345 345683631da9d27964f930c53fdee09d ""
   (generated)
   "samplepaper.aux"
   "samplepaper.log"
