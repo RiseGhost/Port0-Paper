@@ -4,7 +4,7 @@
 %
 \documentclass[runningheads]{llncs}
 %
-\usepackage[english]{babel}  
+\usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 % T1 fonts will be used to generate the final print and online PDFs,
 % so please use T1 fonts in your manuscript whenever possible.
@@ -13,6 +13,8 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{array}
+\usepackage{booktabs}
+\usepackage{url}
 % Used for displaying a sample figure. If possible, figure files should
 % be included in EPS format.
 %
@@ -26,41 +28,25 @@
 %
 \title{Introduction to Data Centre Management Using a Simulation Game} %Sugestão mas se arranjar melhor !
 %
-%\titlerunning{Abbreviated paper title}
+\titlerunning{Data Centre Management Using a Simulation Game}
 % If the paper title is too long for the running head, you can set
 % an abbreviated paper title here
 %
-\author{First Author\inst{1}\orcidID{0000-1111-2222-3333} \and
-Second Author\inst{2,3}\orcidID{1111-2222-3333-4444} \and
-Third Author\inst{3}\orcidID{2222--3333-4444-5555}}
+\author{José Miguel Alves Melo dos Santos\inst{1} \and
+Frutuoso G. M. Silva\inst{1,2}\orcidID{0000-0002-0611-6157}}
 
-% Autores para colocar apenas na versão final
-%%
-%\author{José Miguel Alves Melo dos Santos\inst{1} \and
-%Frutuoso G. M. Silva\inst{1,2}\orcidID{0000-0002-0611-6157} }
-%%
-
-\authorrunning{J. Miguel et al.}
+\authorrunning{J. M. A. M. dos Santos and F. G. M. Silva}
 % First names are abbreviated in the running head.
 % If there are more than two authors, 'et al.' is used.
 %
-\institute{Princeton University, Princeton NJ 08544, USA \and
-Springer Heidelberg, Tiergartenstr. 17, 69121 Heidelberg, Germany
-\email{lncs@springer.com}\\
-\url{http://www.springer.com/gp/computer-science/lncs} \and
-ABC Institute, Rupert-Karls-University Heidelberg, Heidelberg, Germany\\
-\email{\{abc,lncs\}@uni-heidelberg.de}}
+\institute{University of Beira Interior, Covilhã, Portugal \and
+Instituto de Telecomunicações, Covilhã branch, Portugal\\
+\email{\{jose.melo.santos,fgmsilva\}@ubi.pt}}
 %
-% Afiliações para colocar apenas na versão final
-%%
-%\institute{University of Beira Interior, Covilhã, Portugal \and
-%Instituto de Telecomunicações, Covilhã branch, Portugal\\
-%\email{\{jose.melo.santos,fgmsilva\}@ubi.pt}}
-%%
 \maketitle              % typeset the header of the contribution
 %
 \begin{abstract}
-This paper presents the design, development, and evaluation of Port 0, a resource management video game intended to foster direct and indirect learning in data center management and computer science fundamentals. Set in a science-fiction environment, the game combines server hardware configuration, command-line minigames, and dynamic DDoS defense loops to engage players while introducing core technical concepts. An evaluation conducted with 25 participants across diverse technical backgrounds showed positive changes in several post-game response in topics directly integrated into gameplay, such as server architectures, operating systems, software deployment, and cyberattack mitigation. Conversely, technical concepts not embedded in the mechanics showed no knowledge gain, confirming that learning outcomes stemmed directly from game interaction. Usability feedback analyzed through Nielsen's \cite{nielsen1994enhancing} heuristics and telemetry data collected via Firebase provided key insights into player behavior, helping refine interface design and gameplay balance. The results indicate that mechanics-driven simulation games show potential pedagogical tool tool to bridge engagement and technical learning.
+This paper presents the design, development and exploratory evaluation of Port 0, a resource management video game in which the player operates a small data centre in a science-fiction setting. The game combines server hardware configuration, a typing-based command minigame and a periodic defence sequence that represents a DDoS attack, with the intention of exposing players to data centre terminology and concepts through gameplay. A single-group pre/post study was conducted remotely with 25 participants of mixed technical backgrounds, who played for about 19 minutes. Recognition increased for most terms that appear in the game, such as the ARM architecture, IBM as a CPU vendor, software installation through a terminal and DDoS attacks, whereas options not covered by the game, such as ransomware, remained unchanged. Given the small sample, the short exposure, the immediate post-test and the absence of a comparison group, these results are preliminary indications of term recognition and not evidence of management skills. Usability observations analysed with Nielsen's heuristics \cite{nielsen1994enhancing} and telemetry collected with Firebase informed interface changes. The results suggest that mechanics-driven simulation games are a promising way to introduce data centre vocabulary and justify controlled studies.
 
 \keywords{Data centers simulation \and Management in data centers \and Simulation games \and Game-Based Learning.}
 \end{abstract}
@@ -69,90 +55,59 @@ This paper presents the design, development, and evaluation of Port 0, a resourc
 %
 \section{Introduction}
 
+% TODO: a comparação com cinema, TV e jornais foi retirada por falta de fonte. Se houver referência (e.g., Newzoo, PwC), pode ser reposta.
+The video game industry has grown substantially over the past decade and, as it expands in scale and relevance, the application of video games increasingly extends beyond entertainment.
 
-The video game industry has experienced substantial growth over the past decade. In many countries, its economic impact has already surpassed that of traditional media sectors such as film, television, and newspapers. As the industry continues to expand in both scale and relevance, the application of video games increasingly extends beyond entertainment.
+Serious games and simulation-based games provide players with interactive experiences that incorporate educational content. However, even games developed exclusively for entertainment require players to acquire new knowledge, develop complex skills and devise effective strategies in order to progress \cite{Martens2008}. Similarly, Miller \cite{Monica_Miller} suggests that the content of video games can facilitate indirect learning, that is, learning that occurs without the game being explicitly designed for educational purposes.
 
-Serious games and simulation-based games provide players with interactive experiences that incorporate educational content. However, studies such as \textit{Game-Based Learning with Computers: Learning, Simulations} \cite{Martens2008} demonstrate that even games developed exclusively for entertainment require players to acquire new knowledge, develop complex skills, and devise effective strategies in order to progress through levels and overcome challenges.
+Motivated by these findings, this work investigates whether players acquire knowledge while interacting with \textbf{Port 0}, a resource management video game in which the player operates a small data centre within a fictional setting. Players must purchase and configure servers, fulfil client requests and defend the infrastructure against cyberattacks. Although the game is set in a science fiction universe, it incorporates simulation-based mechanics, including a word-based minigame and server configuration tasks.
 
-Similarly, research such as \textit{Video Games and Indirect Learning} by Monica Miller \cite{Monica_Miller} suggests that the content of video games can also facilitate indirect learning, that is, learning that occurs without the game being explicitly designed for educational purposes.
-
-Motivated by these findings, this work aims to investigate whether players acquire knowledge while interacting with \textbf{Port 0}, a resource management video game in which the player is responsible for operating a small data center within a fictional setting. Throughout the game, players must purchase, configure, and manage servers, fulfil client requests, and defend the infrastructure against cyberattacks.
-
-Although the game is set in a science fiction universe, it incorporates several simulation-based mechanics, including word-based mini-games and server configuration tasks. The objective is to provide an engaging and enjoyable gameplay experience while simultaneously promoting knowledge acquisition, both through direct learning mechanisms embedded in the mini-games and through indirect learning arising from the contextual environment in which the player operates.
+We defined two levels of learning objectives (LO, i.e., the knowledge that players are expected to acquire by playing): \textbf{LO1}, recognition of terms related to server hardware, CPU architectures and vendors, operating systems, server software and cyberattacks; and \textbf{LO2}, conceptual understanding, e.g., that server components determine performance and energy consumption, that software can be installed through a terminal and that a DDoS attack disrupts service availability. This exploratory study addresses the following research questions (RQ, i.e., the questions that the evaluation seeks to answer):
+\begin{itemize}
+\item \textbf{RQ1}: Does a short session of Port 0 change participants' recognition of the data centre terms embedded in its mechanics?
+\item \textbf{RQ2}: Are such changes specific to content present in the game, when compared with content that the game does not address?
+\item \textbf{RQ3}: Which usability problems hinder the first contact with the game?
+\end{itemize}
+The evaluation mainly measures LO1 and, partially, LO2.
 %
 \section{Related Work}
 
-The number of video games that convey knowledge to players, either directly or indirectly, is considerably large, regardless of whether they fall within the category of serious games. Alongside the video game industry, several authors have conducted studies and research on learning through video games in recent years. Trends related to the technology field, such as \textbf{data center} and \textbf{technology}, have also become increasingly popular in recent years.
+This section reviews the learning strategies that Port 0 draws on, related games about IT infrastructure and security, and the public interest in the game's theme.
 
-Therefore, throughout this section, the objective is to analyze the learning strategies applied to video games and understand how they produce learning outcomes. Finally, the growth of trends related to the context of the game (\textbf{Port 0}) is analyzed.
+\subsection{Learning through observation and through interaction}
 
-\subsection{Learning through observation}
+Observational learning is the process by which beginners absorb rules, initial steps and complex procedures by watching experienced players, simulations or tutorials \cite{Martens2008}. When integrated into video games or simulations, it acts as a pedagogical ``scaffold'' for the learner \cite{Martens2008}. Titles such as CodeCombat \cite{codecombat}, Manufactoria \cite{manufactoria} and Labor Support Game \cite{labor_support_game} employ this strategy. In CodeCombat, for example, the code is highlighted line by line while the hero performs the corresponding action, so players directly observe the outcome of each command \cite{villareale2020}.
 
-Learning through observation, also referred to as observational learning, is the process by which beginners absorb rules, initial steps, and complex procedures simply by watching experienced players or interacting with simulations and/or tutorials \cite{Martens2008}. When integrated into video games or simulation systems, this type of learning acts as a pedagogical "scaffold" for the learner \cite{Martens2008}.
+Observing a demonstration differs from learning through interaction, in which learners act on the system and receive feedback on the consequences of their actions \cite{villareale2020,Ibrahim2010}. Port 0 relies mainly on interaction and feedback, but its WordRush minigame also includes an observational component similar to CodeCombat: each completed command is shown in a history panel together with a short description of its effect (Section~\ref{Development of Port 0 game}).
 
-Several titles, such as CodeCombat \cite{codecombat}, Manufactoria \cite{manufactoria}, and Labor Support Game \cite{labor_support_game}, employ this learning strategy.
+\subsection{Trial and error and self-directed learning}
 
-In CodeCombat, for example, the developers implemented a split-screen interface where the code is highlighted line by line while the hero performs the corresponding actions on screen, allowing players to directly observe the outcome of each command \cite{villareale2020}.
+Trial and error is an active and exploratory strategy in which individuals test hypotheses in real time to determine which actions lead to success or failure \cite{villareale2020}. Learners repeatedly attempt tasks until they succeed or reach the highest score, understanding complex concepts through their own mistakes \cite{Marques2021,Sari2025}. Feedback loops reinforce this technique, as the system continuously responds to the player's actions \cite{Ibrahim2010}. Port 0 incorporates gameplay loops in which the player repeats a set of tasks and receives feedback in the form of payments, energy costs and attacks (Section~\ref{Design and development of Port 0 game}).
 
-A similar approach to CodeCombat was adopted to convey the meaning of commands within the WordRush minigame. This minigame is discussed in Subsection \ref{Design and development of Port 0 game}.
-
-% Applying this concept to the developed project, elements such as the word minigame, in which the player must type a sequence of falling words in the correct order, are intended to simulate entering commands into a server terminal and can therefore be considered an example of observational learning.
-
-\subsection{Self-tutorage and Trial and Error}
-
-Learning through trial and error is an active and exploratory learning strategy in which individuals test hypotheses in real time to determine which actions lead to successful outcomes and which result in failure \cite{villareale2020}.
-
-Trial and error is also a process in which learners repeatedly attempt missions or tasks until they achieve success or the highest possible score, allowing them to understand complex concepts through direct experience with their own mistakes \cite{Marques2021,Sari2025}.
-
-Feedback loops can be used as a mechanism to enhance this technique, as they create a repetitive cycle in which the system responds to the player's actions, thereby providing continuous learning opportunities \cite{Ibrahim2010}.
-
-Accordingly, the developed project, \textbf{Port 0}, incorporates gameplay loops in which the player is required to repeat a set of tasks. This aspect is discussed in greater detail in Section \ref{Design and development of Port 0 game}.
-
-Finally, self-tutorage is a common practice, particularly in fields such as programming, involving the development of solutions through continuous testing of what works and what does not in real time. This process functions as a form of self-learning and continuous skill development \cite{BaxterWebb2016}.
+A related concept is self-directed learning, in which individuals take the initiative to diagnose their learning needs, choose resources and evaluate the outcomes \cite{knowles1975}. It is common in fields such as programming, where solutions are developed by continuously testing what works \cite{BaxterWebb2016}.
 
 \subsection{Indirect learning}
 
-Indirect learning is a process in which knowledge is acquired as a by-product of another activity, such as leisure \cite{Lindberg2019,BaxterWebb2016}. This process occurs implicitly, unconsciously, or naturally, often without the individual initially realizing that learning is taking place \cite{Lindberg2019}.
+Indirect learning is a process in which knowledge is acquired as a by-product of another activity, such as leisure, often without the individual realising that learning is taking place \cite{Lindberg2019,BaxterWebb2016}. Rather than explicitly teaching content, games create environments in which knowledge is constructed through experience, problem-solving and interaction with complex systems \cite{Monica_Miller}. Commercial games such as \textit{No Man's Sky} \cite{NoMansSky} and \textit{The Legend of Zelda: Breath of the Wild} \cite{BOTW} promote experimentation, creativity, complex problem-solving and resource management; according to Miller, \textit{No Man's Sky} encourages behaviours similar to those used in scientific inquiry without explicitly teaching science \cite{Monica_Miller}.
 
-This learning mechanism is effective because, rather than explicitly teaching content, games create environments in which knowledge is constructed through experience, problem-solving, and interaction with complex systems \cite{Monica_Miller}.
+Following this idea, Port 0 places technical terms in its environment, interface and tasks, so that players can encounter them while playing. In this paper, direct and indirect learning are treated as \emph{design intentions}: the evaluation does not distinguish between them.
 
-Commercial games such as \textit{No Man's Sky} \cite{NoMansSky} and \textit{The Legend of Zelda: Breath of the Wild} \cite{BOTW} nevertheless promote knowledge and skills such as:
+\subsection{Games about IT infrastructure and security}
 
-\begin{itemize}
-    \item Experimentation;
-    \item Scientific thinking;
-    \item Creativity;
-    \item Complex problem-solving;
-    \item Resource management.
-\end{itemize}
+Several commercial games represent IT infrastructure. \textit{Data Center} \cite{datacenter} focuses on the physical layout of racks, power and cooling with high technical fidelity; \textit{PC Building Simulator} \cite{pcbs} reproduces the assembly of a computer and the installation of its operating system; \textit{Startup Company} \cite{startup} and \textit{Software Inc.} \cite{softinc} combine business management with server, power and cooling constraints; and \textit{Grey Hack} \cite{greyhack} simulates networks and hacking through command-line terminals. These titles are designed for entertainment and, to our knowledge, have not been evaluated as learning tools. In contrast, CyberCIEGE \cite{cyberciege} is a serious game in which players configure and protect a virtual network under budget constraints, and it has been used in information assurance education. More broadly, reviews of empirical studies associate games with knowledge acquisition and motivation, but also note that many studies rely on small samples and weak designs \cite{connolly2012}.
 
-According to the study conducted by Monica Miller, \textit{No Man's Sky} \cite{NoMansSky} fosters scientific curiosity not because it explicitly teaches science, but because its gameplay structure encourages players to adopt behaviors similar to those used in scientific inquiry \cite{Monica_Miller}.
+Port 0 lies between these groups: it simplifies the infrastructure represented in commercial simulators and adds fantasy elements, following design guidelines for educational games \cite{silva2020}, and it is evaluated, here in an exploratory way, for the recognition of the concepts it embeds.
 
-Similarly, \textbf{Port 0} seeks to promote scientific curiosity through its environment, visual elements, and gameplay tasks.
+\subsection{Public interest in the technology field}
 
-\subsection{\textit{Hype} surrounding the technology field}
-
-\textit{Hype} is defined as "a situation in which something is advertised and discussed in newspapers, on television, etc. a lot in order to attract everyone's interest" \cite{CambridgeHype}.
-
-To evaluate the hype surrounding topics such as \textit{technology} and \textit{data center}, the \textit{Google Trends} tool was used. Google Trends measures the relative search interest for terms entered by users into Google's search engine over time and across different geographical regions.
+Google Trends reports the relative search interest (0--100) for terms over time. Figure~\ref{fig:trends} shows the worldwide interest for the search terms \textit{technology} and \textit{data center} from August 2021 to August 2026 (monthly values, retrieved in August 2026). Interest in both terms remained roughly stable until mid-2025 and then rose sharply. Since the context of a game can raise a player's interest before play begins \cite{Martens2008} and the attractiveness of an educational game is related to its subject matter \cite{Marques2021}, we hypothesise that this growing public attention may increase learners' interest in the topic. This hypothesis is not tested in the present study.
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.75\linewidth]{Images/trends.pdf}
-    \caption{Relative Search Interest for \textit{Data Center} and \textit{Technology}.}
+    \includegraphics[width=0.7\linewidth]{Images/trends.pdf}
+    \caption{Worldwide relative search interest for the terms \textit{technology} and \textit{data center} (Google Trends, August 2021--August 2026, retrieved in August 2026).}
     \label{fig:trends}
 \end{figure}
-
-The data obtained from \textit{Google Trends} are presented in Figure \ref{fig:trends}, which shows the worldwide relative search interest over time for the topics \textit{data center} and \textit{technology}.
-
-From these data, it can be concluded that both topics have experienced substantial growth over the past five years. Although it may not seem obvious, there is a hypothesis that public interest may be directly related to students’ motivation to learn.
-
-
-Public interest in a particular topic or product may be the result of marketing efforts. When applied to a game and combined with an engaging context, it can increase the player's level of interest even before gameplay begins \cite{Martens2008}.
-
-Furthermore, the technological domain in which the project is situated is itself a motivating factor for learning. Young people aspiring to careers in technology, such as game development, are often attracted to computer science programs because they revolve around an "object of pleasure" (the game) \cite{BaxterWebb2016}.
-
-Therefore, the developed project, \textit{\textbf{Port 0}}, was designed to support both direct and indirect learning opportunites, since it is situated within a field experiencing increasing hype. The attractiveness of an educational game is closely related to its content and to the connection that learners establish with its subject matter \cite{Marques2021}.
 
 %
 \section{Design and development of Port 0 game}
@@ -160,186 +115,258 @@ Therefore, the developed project, \textit{\textbf{Port 0}}, was designed to supp
 
 \subsection{Design of Port 0 game}
 
-The game concept can be described as follows: a fantasy setting with science-fiction elements in which the player takes on the role of an engineer working in an environment inspired by a data centre. The player's primary responsibility is to perform technical tasks. The main tasks are to buy and configure the hardware used in a data center, taking into account several aspects, such as for example, the processing capacity, the energy aspects, etc. Other tasks are presented in the form of word-based minigames, in which the player must write a set of commands with a specific purpose. In addition, the player must defend the data centre from attacks using a cannon.
+Port 0 is set in a fantasy environment with science-fiction elements in which the player is an engineer working in a facility inspired by a data centre. The main tasks are to buy and configure servers, taking into account aspects such as processing capacity and energy consumption, and to complete client requests through a word-based minigame inspired by entering commands in a terminal. In addition, the player must defend the data centre from attacks using a cannon.
 
-The game also features several gameplay loops, among which the task loop and the attack loop stand out. The task loop is the most common and longest-lasting loop. During this loop, the player receives requests from clients and must choose whether to accept or reject them. If a request is accepted, the player must complete a word-based minigame inspired by entering commands in a terminal, in which a set of commands must be written to complete the task. In the attack loop, on the other hand, the player must use a cannon to defend the data centre from hordes of enemies attempting to attack the facility.
+The game features two main gameplay loops. The task loop is the most common and longest-lasting: the player receives client requests and chooses whether to accept them; an accepted request is completed by playing the WordRush minigame. In the attack loop, the player uses a cannon to defend the data centre from hordes of enemies. Table~\ref{tab:mapping} maps the content of the learning objectives to the mechanics that convey it and to the questionnaire items used in the evaluation (Section~\ref{sec:method}).
 
-With this in mind, several game design techniques were applied to achieve the intended concept as effectively as possible, including:
-\begin{itemize}
-\item MDA Framework \cite{framework-mda};
-\item Flow \cite{flow};
-\item Hook Model \cite{modelo-hook}.
-\end{itemize}
+\begin{table}[htbp]
+    \centering
+    \caption{Mapping between learning content, game mechanics and assessment items.}
+    \label{tab:mapping}
+    \scriptsize
+    \begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}p{4.8cm}>{\raggedright\arraybackslash}p{3.3cm}@{}}
+        \toprule
+        \textbf{Content (LO)} & \textbf{Game mechanic} & \textbf{Questionnaire item} \\ \midrule
+        Server hardware (LO1, LO2) & Shop: configuration of CPU, RAM, disks, network card, OS and simplified cooling, with short descriptions & Components heard of \\
+        CPU architectures and vendors (LO1) & Shop: choice of ARM/x64 and AMD/Intel/IBM; ARM recommended when energy use is high & CPU architectures; other CPU vendors \\
+        Operating systems (LO1) & OS installation step in the shop; Ubuntu-styled terminal in WordRush & Other operating systems \\
+        Data centre services and server software (LO1, LO2) & Client requests; WordRush categories (Apache, MySQL, Node.js, Nginx, Postfix) & Data centre services; website technologies; e-mail service \\
+        Software installation via terminal (LO1, LO2) & WordRush commands (e.g., \texttt{sudo apt install}) & Installation methods \\
+        Cyberattacks: DDoS (LO1, LO2) & Attack loop: revenue suspended until all enemies are destroyed & Cyberattacks \\
+        Not addressed by the game & -- & Ransomware; DVD, app store and website installation \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
-The MDA Framework \cite{framework-mda} guided Port 0's design by directly embedding its theoretical pillars into the gameplay. Mechanics encompass typing Linux commands in WordRush, configuring server hardware, and operating the defense cannon. These spark Dynamics focused on resource management, balancing task revenue against energy expenses, and adapting to cyberattack interruptions. Ultimately, the Aesthetics deliver a sense of technical mastery and engagement by breaking task monotony with action-packed combat.
+Three game design techniques guided this concept: the MDA framework \cite{framework-mda}, Flow \cite{flow} and the Hook Model \cite{modelo-hook}. In MDA terms, the \emph{mechanics} are typing Linux commands in WordRush, configuring server hardware and operating the defence cannon; they give rise to \emph{dynamics} of resource management, balancing task revenue against energy expenses and adapting to attack interruptions; and the intended \emph{aesthetics} are a sense of technical mastery, with task monotony broken by action-oriented combat.
 
-Flow \cite{flow} was one of the most important techniques, as it provides a framework for measuring and designing an experience capable of keeping the player in a state of flow. This state represents a balance between the player's level of challenge and their abilities, preventing them from becoming either bored or anxious.
+Flow \cite{flow} describes a balance between challenge and the player's abilities that avoids boredom and anxiety. It was used as a design reference: the attack loop was introduced to interrupt the potentially monotonous task loop and renew the challenge. Flow and engagement were design goals and were not measured in this study.
 
-The attack loop was designed to reduce monotony and help balance challenge and player engagement. This type of gameplay loop breaks the potentially monotonous task-based gameplay and provides additional stimulation, helping to move the player away from a state of boredom.
-
-Finally, the Hook Model \cite{modelo-hook} provides a theoretical and practical framework designed to encourage the development of habits through continuous interaction with a product. Furthermore, the model helps define behavioural patterns through which continuous interactions with the product can be encouraged, including in the context of the developed game. For example, visual appeal, appeal/curiosity for the theme and earning money resulting from tasks performed that are paid periodically.
-
+The Hook Model \cite{modelo-hook} describes a cycle of trigger, action, variable reward and investment intended to form habits. Because habit-forming design raises ethical concerns, particularly for young players, its use in Port 0 was limited to elements that sustain a play session: curiosity about the theme, short tasks of about one minute and variable payments from clients. The prototype has no monetisation, and planned reward elements such as trophies were not implemented. Client revenue continues to accrue while the game is closed, which acts as a return trigger; its effect on long-term play was not studied, as the evaluation consisted of a single supervised session.
 
 \subsection{Development of Port 0 game}
 \label{Development of Port 0 game}
 
-\textit{\textbf{Port 0}} was developed using a set of tools and technologies, including \textit{Unity} as the game engine, \textit{C\#} as the programming language, and \textit{Blender} as the software used for the creation and texturing of 3D models.
+Port 0 was developed with \textit{Unity} and \textit{C\#}, and the 3D models were created and textured in \textit{Blender}. The game is composed of several interconnected systems (Fig.~\ref{GameScene}).
 
-The game is composed of several interconnected systems that work together to create a complete and interactive experience (see Figure \ref{GameScene}). The shop system allows the player to purchase a server. However, to do so, the player must go through a series of steps in which several components have to be configured. The purpose of this system is to introduce the player to the different components that make up a server, while also providing a brief description of each component.
+The \textbf{shop system} allows the player to purchase a server through a sequence of steps in which components are configured, each with a short description (Fig.~\ref{fig:shop}). Every component has a price and an energy consumption in watts, and processors contribute to computing capacity in TFLOPS. Real units are used to connect the simulation with real hardware, although values are simplified. When the configured server has a high energy consumption, the shop displays a message recommending an ARM processor, reflecting the common positioning of ARM server processors as more energy-efficient. After the hardware, the player goes through a simulated operating system installation, in which the server is named.
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
-    
-    \begin{minipage}{0.45\textwidth}
+    \begin{minipage}{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Images/Cenario.png}
-        \caption{Game scene}
+        \caption{Game scene.}
         \label{GameScene}
     \end{minipage}
     \hfill
-    \begin{minipage}{0.45\textwidth}
+    \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Images/WordRush.png}
-        \caption{WordRush minigame}
-        \label{WordRush}
+        \includegraphics[width=\textwidth]{Images/Shop_CPU.png}
+        \caption{Shop: CPU configuration, with architecture, vendor, TFLOPS, watts and price.}
+        \label{fig:shop}
     \end{minipage}
-    
 \end{figure}
 
-Alongside the shop system, an economy system was developed to manage the transactions performed by the player, such as purchases and sales. It also manages periodic transactions, including recurring payments from clients for provided services and expenses such as energy costs.
+The \textbf{economy system} periodically debits energy costs and credits one-off and recurring payments from clients; cooling, water and network costs were omitted in this version. The \textbf{task system} periodically presents client requests, each requiring server resources, which the player may accept or reject. The player earns money actively, by completing new tasks, and passively, through recurring payments from previously completed ones.
 
-The task system is responsible for randomly selecting tasks and presenting them to the player. This system enables the player to earn money both actively, by completing new tasks, and passively, through payments generated by previously completed tasks. This system constitutes a continuous gameplay loop that operates throughout the entire gameplay experience. The \textit{WordRush} minigame, in which the player writes a set of Linux commands, is a direct consequence of this system, as completing the minigame is what concludes an accepted task; as shown in Figure \ref{WordRush}.
+An accepted task is completed by playing \textbf{WordRush} (Fig.~\ref{WordRush}), which simulates an Ubuntu-styled terminal. The words of a command (e.g., \texttt{sudo}, \texttt{apt}, \texttt{install}, \texttt{mysqlserver}) move across the screen and the player must type them as displayed; players do not choose or compose the commands. Each completed command is added to a history panel together with a short description of its effect (e.g., ``Installs MySQL server''). Each task category corresponds to a server technology: Apache, MySQL, Node.js, Node.js with Nginx, and Postfix. WordRush therefore provides exposure to commands and their purpose, not practice in writing them.
 
-Finally, the combat system is responsible for managing the hacker attacks that occur throughout the game. It operates periodically, with the primary purpose of breaking the task-based gameplay loop. It acts as a disruptive element that interrupts gameplay that could otherwise become monotonous, introducing greater variety, action, and entertainment to the player's experience.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\linewidth]{Images/WordRush_History.png}
+    \caption{WordRush minigame: words of the current command move across the terminal (right); completed commands and their descriptions are listed in the history panel (left).}
+    \label{WordRush}
+\end{figure}
+
+Finally, the \textbf{combat system} triggers an attack after a given number of completed tasks. The attack is announced by an e-mail and, while it lasts, recurring revenue is suspended but costs continue, until the player destroys all enemies with the cannon. The cannon is not intended to represent real DDoS mitigation, such as traffic filtering or rate limiting. It is a metaphor meant to convey that a data centre can be targeted and that an attack disrupts service availability and causes financial loss; its main design purpose is to break the monotony of the task loop.
 
 %
-\section{Results}
+\section{Evaluation Method}
+\label{sec:method}
 
-\subsection{Evaluation Methodology}
+\subsection{Participants}
 
-To evaluate the developed game, two questionnaires were applied (one before and another after the game session) aimed at measuring the participants' increase in knowledge. In the game session, the player's goal was to reach the 1st DDoS attack.
-Simultaneously, the game sessions were observed to identify usage patterns and opportunities for UX improvement, analyzed according to Nielsen's usability heuristics \cite{nielsen1994enhancing}, chosen because they were specifically developed to evaluate user experience, as shown in the Table \ref{tab:DadosNielsen}. Telemetry data was also automatically collected through the Firebase platform, allowing the identification of anomalous interaction times at different moments of gameplay.
-
-\begin{table}[H]
-    \centering
-    \begin{tabular}{|p{3.5cm}|c|p{3cm}|p{4cm}|}
-        \hline
-        \textbf{Problem} & \textbf{Severity} & \textbf{Heuristic} & \textbf{Solution} \\ \hline
-        Lack of \textit{feedback} in sound system/notifications/CPU config. & Low & Visibility of system status & Addition of an informative \textit{label} \\ \hline
-        Cannon controls & High & User control and freedom / Consistency and standards & Invert commands \\ \hline
-        Player does not remember how to open the shop & High & Recognition rather than recall & Addition of a visual indicator on the UI \\ \hline
-        Player lacks awareness of the purpose of \textit{hardware} components & High & Match between system and the real world & Addition of a label with a short component description in the shop \\ \hline
-        Lack of \textit{feedback} in emails & High & Visibility of system status & Addition of a visual indicator that appears whenever there is an unread email \\ \hline
-        Camera too close to the player & Low & User control and freedom & Addition of camera zoom control \\ \hline
-    \end{tabular}
-    \caption{Analysis of problems using Nielsen's heuristics}
-    \label{tab:DadosNielsen}
-\end{table}
-
-
-\subsection{Sample Characterization}
-
-The sample consists of 25 individuals of various genders and ages ranging from under 18 to over 30 years old, mostly concentrated between 18 and 29 years old (21 out of 25 participants), as shown in the Table \ref{tab:Faixa_Idades}. Regarding prior knowledge in computer science, 52\% of the sample has an academic background in the area, while the remaining 48\% have only user-level knowledge or none at all (see Table \ref{tab:Conhecimentos}). This factor is relevant, as participants with prior training tend to show a less pronounced knowledge gain.
+Twenty-five participants were recruited by convenience among friends, acquaintances and through announcements at the university. Their ages ranged from under 18 to 34 years, with 21 aged between 18 and 29; two participants were under 18 (Table~\ref{tab:Faixa_Idades}). Thirteen participants had an academic background in computer science (Table~\ref{tab:Conhecimentos}); one answer to this question was invalid and was excluded, so Table~\ref{tab:Conhecimentos} totals 24.
 
 \begin{table}[htbp]
     \centering
+    \scriptsize
     \begin{minipage}{0.42\textwidth}
         \centering
-        \begin{tabular}{|c|c|}
-            \hline
-            \textbf{Age range} & \textbf{Individuals} \\ \hline
-            Under 18 years old & 2 \\ \hline
-            18 to 24 years old & 10 \\ \hline
-            25 to 29 years old & 11 \\ \hline
-            30 to 34 years old & 2 \\ \hline
-            Over 35 years old & 0 \\ \hline
-        \end{tabular}
-        \caption{Age range}
+        \caption{Age range.}
         \label{tab:Faixa_Idades}
-    \end{minipage}%
-    \begin{minipage}{0.50\textwidth}
-        \centering
-        \begin{tabular}{|c|c|}
-            \hline
-            \textbf{Prior knowledge} & \textbf{Individuals} \\ \hline
-            Academic degree in the area & 13 \\ \hline
-            User level only & 4 \\ \hline
-            None & 7 \\ \hline
+        \begin{tabular}{@{}lc@{}}
+            \toprule
+            \textbf{Age range} & \textbf{Participants} \\ \midrule
+            Under 18 years old & 2 \\
+            18 to 24 years old & 10 \\
+            25 to 29 years old & 11 \\
+            30 to 34 years old & 2 \\
+            35 years old or over & 0 \\ \bottomrule
         \end{tabular}
-        \caption{Prior knowledge in computer science}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}{0.54\textwidth}
+        \centering
+        \caption{Prior knowledge in computer science ($n=24$ valid answers).}
         \label{tab:Conhecimentos}
+        \begin{tabular}{@{}lc@{}}
+            \toprule
+            \textbf{Prior knowledge} & \textbf{Participants} \\ \midrule
+            Academic training in the area & 13 \\
+            User level only & 4 \\
+            None & 7 \\ \bottomrule
+        \end{tabular}
     \end{minipage}
 \end{table}
 
-\subsection{Knowledge Conveyed by the Game}
+\subsection{Procedure}
 
-The comparison between pre- and post-game responses reveals consistent knowledge gains in areas directly addressed by the game, namely hardware components (CPU and hard drives), architectures (highlighting ARM, whose recommendation appears in the shop associated with energy savings), CPU brands (IBM), operating systems (Linux), web frameworks, and software installation methods. Table \ref{Tab:Lean} summarizes the most significant variations.
+% TODO: confirmar o nome/referência da comissão de ética e como foi obtido o consentimento dos dois menores (e.g., encarregados de educação).
+Sessions were conducted remotely through Discord or Google Meet, with participants sharing their screen. Each participant answered the pre-test questionnaire, played until the end of the first DDoS attack (on average 19 minutes, Table~\ref{Tab:TelemetricData}) and answered the post-test immediately afterwards. The researcher intervened only when a participant could not progress for more than two minutes. The study was approved by the ethics committee, participation was voluntary, the questionnaires were anonymous, and no personal data were collected nor profiles built.
 
-In contrast, Ransomware recognition remained unchanged (18 responses before and after), which is consistent with the fact that this attack is not directly addressed in the game, unlike DDoS, whose recognition increased by 41.2\% (from 17 to 24 correct responses). This suggests that knowledge gains are concentrated on content effectively taught through the gameplay experience, rather than a generic and non-specific improvement.
+\subsection{Instruments}
 
-\begin{table}[H]
-    \begin{tabular}{|p{6cm}|c|}
-        \hline
-        \textbf{Evaluated knowledge indicator} & \textbf{Variation (before → after)} \\ \hline
-        Recognition of IBM as a CPU brand & 8\% → 48\% \\ \hline
-        Recognition of Linux as an operating system & 76\% → 88\% \\ \hline
-        Recognition of the ARM architecture & 56\% → 84\% \\ \hline
-        Recognition of frameworks (e.g., Apache) & 48\% → 72\% \\ \hline
-        Software installation via terminal (correct answer) & 15 → 24\\ \hline
-        Recognition of DDoS attack & 17 → 24 \\ \hline
-    \end{tabular}
-    \caption{Increase of knowledge}
-    \label{Tab:Lean}
-\end{table}
+The pre-test included demographic questions (age, education, training in computer science and gaming habits) and nine knowledge items, which were repeated unchanged in the post-test. Six items were multiple-response questions, e.g., ``Which of the following are cyberattacks?'', mixing correct options, incorrect options and fictitious distractors; one was a yes/no question (``Can an individual create a Gmail-like e-mail service?''); and two asked which CPU vendors other than AMD and Intel, and which operating systems other than Windows and macOS, participants knew (open answers). For each option we report the number of participants who selected it before and after playing. Several options correspond to content that is not present in the game and act as a comparison for the effect of repeating the test. Because the two anonymous questionnaires were not linked at participant level, paired tests (e.g., exact McNemar) could not be computed, and the results are descriptive.
+% TODO: confirmar que as respostas pré/pós não podem ser emparelhadas por participante.
 
-\subsection{Analytical Data Analysis (Telemetry)}
+For the usability analysis, the researcher observed each shared screen and recorded the problems encountered, which were afterwards classified according to Nielsen's heuristics \cite{nielsen1994enhancing}. Severity was assigned as \emph{low} (no direct impact on gameplay), \emph{medium} (reduced impact, without preventing progress) or \emph{high} (strong impact, may block progress).
 
-Telemetry data collected via Firebase allowed the calculation of descriptive statistics (mean (M), standard deviation (SD), and coefficient of variation (CV)) for the main player actions, as show in the Table \ref{Tab:TelemetricData}:
+Firebase recorded timestamps of gameplay events, from which we computed the time to purchase and configure the first server, the duration of the first attack (from its start until the last enemy is destroyed), the total time from the start of the session until the end of the first attack, and the time to complete each WordRush task. Six of the 25 telemetry records were discarded as invalid, due to game errors or external factors, leaving 19 records.
+% TODO: confirmar o evento de início usado para o tempo de compra do 1.º servidor (início da sessão ou abertura da loja).
 
-\begin{table}[H]
-    \begin{tabular}{|p{6cm}|>{\centering\arraybackslash}p{4cm}|}
-        \hline
-        \textbf{Analytical metric (time)} & \textbf{M | SD | CV} \\ \hline
-        Purchase of 1st server & 125.94 s | 84.88 s | 67.39\%\\ \hline
-        Attack duration (1st DDoS attack) & 85.33 s | 25.11 s | 29.42\% \\ \hline
-        Total time until the end of the 1st attack & 1144,90 s | 411,01 s | 35,90\% \\ \hline
-    \end{tabular}
-    \caption{Analytical telemetry data}
-    \label{Tab:TelemetricData}
-\end{table}
+\section{Results}
 
-The purchase of the first server shows the highest variability (CV of 67.39\%), possibly associated with the heterogeneity of the sample's prior computer science experience, resulting in participants with formal education in the area executing this task faster, although the data does not allow establishing a direct causal relationship, as show in Figure \ref{fig:TimeByServer}.
+\subsection{Knowledge items}
 
-\begin{figure}
+Table~\ref{Tab:Lean} reports all questionnaire options. Percentage changes are given in percentage points (pp).
+
+\begin{table}[htbp]
     \centering
-    \includegraphics[width=0.75\linewidth]{Images/Compra de servidor.pdf}
-    \caption{Time required for players to purchase the first server (high dispersion relative to the mean).}
+    \caption{Number (and percentage) of the 25 participants who selected each option before and after playing. Key: C = correct, I = incorrect or fictitious. In game: whether the content appears in Port 0.}
+    \label{Tab:Lean}
+    \scriptsize
+    \begin{tabular}{@{}llccrrr@{}}
+        \toprule
+        \textbf{Item} & \textbf{Option} & \textbf{Key} & \textbf{In game} & \textbf{Before} & \textbf{After} & \textbf{$\Delta$ (pp)} \\ \midrule
+        Components heard of & CPU & C & yes & 23 (92\%) & 25 (100\%) & +8 \\
+         & Disks & C & yes & 23 (92\%) & 25 (100\%) & +8 \\
+         & Operating system & C & yes & 23 (92\%) & 23 (92\%) & 0 \\
+         & Fans & C & partly & 23 (92\%) & 23 (92\%) & 0 \\
+         & Motherboard & C & no & 23 (92\%) & 23 (92\%) & 0 \\ \midrule
+        CPU architectures & x64 & C & yes & 22 (88\%) & 25 (100\%) & +12 \\
+         & ARM & C & yes & 14 (56\%) & 21 (84\%) & +28 \\
+         & x32\textsuperscript{a} & C & no & 20 (80\%) & 18 (72\%) & $-8$ \\
+         & x8 & I & no & 2 (8\%) & 1 (4\%) & $-4$ \\ \midrule
+        Other CPU vendor & IBM & C & yes & 2 (8\%) & 12 (48\%) & +40 \\
+        Other OS & Linux & C & yes & 19 (76\%) & 22 (88\%) & +12 \\ \midrule
+        Data centre services & Website hosting & C & yes & 15 (60\%) & 22 (88\%) & +28 \\
+         & Data storage & C & yes & 19 (76\%) & 22 (88\%) & +12 \\
+         & E-mail, DNS, VPN & C & yes & 15 (60\%) & 21 (84\%) & +24 \\ \midrule
+        Website technologies & Programming languages & C & partly & 25 (100\%) & 24 (96\%) & $-4$ \\
+         & ``Apache framework''\textsuperscript{b} & C & yes & 12 (48\%) & 18 (72\%) & +24 \\
+         & Windows & I & -- & 0 (0\%) & 2 (8\%) & +8 \\
+         & Gmail & I & -- & 0 (0\%) & 1 (4\%) & +4 \\
+         & Microsoft Word & I & -- & 0 (0\%) & 0 (0\%) & 0 \\ \midrule
+        Individual e-mail service & Yes & C & yes & 19 (76\%) & 22 (88\%) & +12 \\ \midrule
+        Installation methods & Terminal commands & C & yes & 15 (60\%) & 24 (96\%) & +36 \\
+         & Download from website & C & no & 18 (72\%) & 20 (80\%) & +8 \\
+         & App store & C & no & 16 (64\%) & 19 (76\%) & +12 \\
+         & DVD & C & no & 21 (84\%) & 20 (80\%) & $-4$ \\
+         & Asking an AI & I & -- & 5 (20\%) & 5 (20\%) & 0 \\
+         & ``Power of the mind'' & I & -- & 1 (4\%) & 0 (0\%) & $-4$ \\ \midrule
+        Cyberattacks & DDoS & C & yes & 17 (68\%) & 24 (96\%) & +28 \\
+         & Ransomware & C & no & 18 (72\%) & 18 (72\%) & 0 \\
+         & ``Wifi'' & I & -- & 2 (8\%) & 0 (0\%) & $-8$ \\
+         & ``BNS'' & I & -- & 1 (4\%) & 0 (0\%) & $-4$ \\ \bottomrule
+        \multicolumn{7}{@{}p{\textwidth}@{}}{\textsuperscript{a}x32 is an ABI of the x86-64 architecture rather than an architecture. \textsuperscript{b}Wording of the instrument; Apache HTTP Server is a web server, not a framework (see text).}
+    \end{tabular}
+\end{table}
+% TODO: acrescentar as contagens das opções "Venda de computadores" e "Venda de eletrodomésticos" (não constam da tese).
+
+The largest increases occurred in options directly present in the game: IBM as a CPU vendor (+40 pp), which is one of the three vendors in the shop; installation through terminal commands (+36 pp), the only installation method shown in WordRush; the ARM architecture (+28 pp), which the shop recommends for lower energy consumption; DDoS (+28 pp); and website hosting (+28 pp). In contrast, ransomware, which the game does not address, remained unchanged (18 before and after), as did ``asking an AI''; installation by DVD and the x32 option, also absent from the game, decreased slightly. Recognition of hardware components was already near the ceiling before playing. Two participants selected incorrect website technologies after playing.
+
+The option ``Apache framework, among others'' was worded incorrectly in the instrument: Apache HTTP Server is a web server, not a framework. We therefore interpret this item as recognition of server software required to host a website. Since the option was scored as correct in both questionnaires, the wording affects the interpretation of the item but not the comparison between the two moments.
+
+\subsection{Usability}
+
+Table~\ref{tab:DadosNielsen} lists the problems observed during the sessions. All participants played the same version of the game; the proposed solutions were implemented after the sessions and have not yet been evaluated with users.
+% TODO: confirmar que as soluções foram implementadas depois de todas as sessões (mesma versão para todos).
+
+\begin{table}[htbp]
+    \centering
+    \caption{Usability problems classified with Nielsen's heuristics.}
+    \label{tab:DadosNielsen}
+    \scriptsize
+    \begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.1cm}c>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{3.4cm}@{}}
+        \toprule
+        \textbf{Problem} & \textbf{Severity} & \textbf{Heuristic} & \textbf{Solution} \\ \midrule
+        Lack of feedback in the sound system & Low & Visibility of system status & Informative label \\
+        Lack of feedback in the notification buttons & Medium & Visibility of system status & Clearer instructions next to the buttons \\
+        Lack of feedback in the CPU configuration (shop) & Medium & Visibility of system status & Informative label \\
+        Cannon controls & High & User control and freedom / Consistency and standards & Inverted controls \\
+        Player does not remember how to open the shop & High & Recognition rather than recall & Visual indicator on the UI \\
+        Player unaware of the purpose of hardware components & High & Match between system and the real world & Short component descriptions in the shop \\
+        Lack of feedback for e-mails & High & Visibility of system status & Indicator shown whenever there is an unread e-mail \\
+        Camera too close to the player & Low & User control and freedom & Camera zoom control \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Telemetry}
+
+Table~\ref{Tab:TelemetricData} summarises the times computed from the 19 valid telemetry records.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Descriptive statistics of the main times ($n=19$ valid records). M: mean; SD: standard deviation; CV: coefficient of variation.}
+    \label{Tab:TelemetricData}
+    \scriptsize
+    \begin{tabular}{@{}lcrrr@{}}
+        \toprule
+        \textbf{Metric} & \textbf{$n$} & \textbf{M (s)} & \textbf{SD (s)} & \textbf{CV (\%)} \\ \midrule
+        Purchase of the first server & 19 & 125.94 & 84.88 & 67.39 \\
+        Duration of the first attack & 19 & 85.33 & 25.11 & 29.42 \\
+        Total time until the end of the first attack & 19 & 1144.90 & 411.01 & 35.90 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+% TODO: confirmar que as três métricas têm 19 registos válidos.
+
+The purchase of the first server shows the highest variability (CV of 67.39\%, Fig.~\ref{fig:TimeByServer}). One possible explanation is the heterogeneity of prior computer science experience in the sample, but no subgroup analysis was performed and this remains a hypothesis. The duration of the first attack shows lower variability (CV of 29.42\%), which may reflect that the cannon mechanic resembles those of many other games; lower variance does not, by itself, indicate learning. The total time until the end of the first attack (M~$\approx$~19 min, CV of 35.90\%) varied considerably between participants.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.62\linewidth]{Images/Compra de servidor.pdf}
+    \caption{Time required by each participant to purchase the first server ($n=19$).}
     \label{fig:TimeByServer}
 \end{figure}
 
-On the other hand, the attack duration (combat minigame) presents moderate variability (CV of 29.42\%), lower than that observed in other actions. This result is attributed to the straightforward and familiar nature of this mechanic, similar to mechanics found in other video games. The total time until the completion of the 1st attack (CV of 35.90\%) reveals, through the average trendline, two distinct performance groups, reflecting the diversity of the sample. Finally, the WordRush word minigame presented average times between 30 seconds and 1m30s per category (see Figure \ref{fig:AverageTime}), an interval considered positive for avoiding predictability without making tasks overly long.
+The mean time per WordRush category ranged from 31 to 79 seconds (Fig.~\ref{fig:AverageTime}). This is consistent with the design target of short tasks of about one minute (Section~\ref{Design and development of Port 0 game}), which was chosen to avoid keeping the player in a single activity for too long while allowing some variation between tasks.
 
-\begin{figure}
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.75\linewidth]{Images/MiniGamesAverageTime.pdf}
-    \caption{Average time per technology  in WordRush minigame.}
+    \includegraphics[width=0.62\linewidth]{Images/MiniGamesAverageTime.pdf}
+    \caption{Mean time per task category in the WordRush minigame.}
     \label{fig:AverageTime}
 \end{figure}
 
-\subsection{Summary}
+\section{Discussion and Limitations}
 
-Overall, the results suggest that the game contributes to a measurable increase in technical knowledge specifically related to the content covered (hardware, architectures, operating systems, frameworks, and DDoS attacks), with no equivalent effect on unaddressed topics (Ransomware). The usability analysis (Nielsen's heuristics) identified concrete issues, mostly regarding visual feedback and feature discoverability, which were resolved with targeted solutions. Telemetry data shows heterogeneous performance in initial tasks (server purchase) but greater consistency in core game mechanics (attack), suggesting effective learning of the primary mechanics throughout the session.
+Regarding RQ1, recognition increased for most terms embedded in the game's mechanics. Regarding RQ2, options absent from the game, such as ransomware, did not show a comparable increase, which is consistent with an effect of exposure to the game content rather than a generic improvement. Regarding RQ3, the most severe problems concerned feature discoverability (opening the shop), feedback (e-mails) and the cannon controls.
+
+These results must be interpreted with caution. The study used a small convenience sample, a single short session (about 19 minutes) and an immediate post-test, with no comparison group and no retention test. A single-group pre/post design cannot separate the effect of playing from that of repeating the same questionnaire, and a few unchanged items do not establish causation. Participants received help when blocked for more than two minutes, the sessions were remote, and the analysis is descriptive, as the questionnaires could not be paired. The instrument measures recognition: selecting ``terminal commands'' does not show that a participant can install software or explain a command, and recognising DDoS does not show knowledge of how to mitigate it; management decisions were not assessed. Finally, one item used incorrect terminology (Apache), and the technical content would benefit from review by data centre professionals.
+% TODO: se houve revisão do conteúdo por especialistas, substituir a última frase.
 
 \section{Conclusion}
 
-This paper presented an evaluation of \textbf{Port 0}, a resource management simulation game designed to foster both direct and indirect learning within data center management and foundational technology concepts. By integrating mechanics such as server hardware configuration, command-line minigames, and dynamic DDoS defense loops, the game aims to provide an engaging educational experience without sacrificing commercial entertainment value. 
+This paper presented the design, development and exploratory evaluation of \textbf{Port 0}, a resource management simulation game designed to expose players to data centre concepts through server configuration, a command-typing minigame and a periodic attack loop. In a study with 25 participants, recognition increased for most terms embedded in the gameplay, such as the ARM architecture, IBM as a CPU vendor, terminal-based installation and DDoS attacks, whereas content not addressed by the game showed no comparable change. Usability observations and telemetry identified interface problems that guided subsequent improvements.
 
-The empirical evaluation, conducted with a sample of 25 participants across varied technical backgrounds, demonstrates that interactive simulation mechanics can lead to measurable knowledge acquisition. Post-game assessments revealed notable improvements in technical areas explicitly embedded in gameplay like such as server architecture awareness, operating system commands, software deployment, and cyberattack mitigation, while domain concepts omitted from the game mechanics showed no change. Furthermore, telemetry data and usability evaluations based on Nielsen’s \cite{nielsen1994enhancing} heuristics proved essential for identifying user experience bottlenecks, enabling iterative interface and feedback improvements.
-
-Overall, the findings suggest that contextualized, mechanics-driven video games showed promise as tools to support technical education. Future work will focus on expanding the scope of operational challenges within \textbf{Port 0}, introducing advanced security scenarios such as ransomware mitigation, and conducting longitudinal studies with larger cohort groups to assess long-term knowledge retention.
+Given the limitations of the study, these findings are preliminary indications that mechanics-driven simulation games can introduce technical vocabulary, not evidence that players acquire data centre management skills. Future work will expand the operational challenges of Port 0, introduce further security scenarios such as ransomware, include items that assess conceptual understanding and management decisions, re-evaluate the usability changes and conduct controlled studies with larger samples and delayed post-tests to assess retention.
 
 \subsubsection*{Acknowledgment.}
-This work is funded by national funds through FCT –- Fundação para a Ciência e 
+This work is funded by national funds through FCT –- Fundação para a Ciência e
 a Tecnologia, I.P., and, when eligible, co-funded by EU funds under project/support UID/50008/2025 –- Instituto de Telecomunicações.
 
 \subsubsection*{Disclosure of Interests.}
@@ -374,14 +401,11 @@ The authors have no competing interests to declare that are relevant to the cont
 %\bibitem{ref_url1}
 %LNCS Homepage, \url{http://www.springer.com/lncs}, last accessed 2023/10/25
 
-\bibitem{Tom_Hirschfeld}
-Hirschfeld, T.: \textit{How to Master Video Games}, Bantam Books, New York (1981)
-
 \bibitem{Monica_Miller}
-Miller, M.: \textit{Video Games and Indirect Learning}, Advances in Game-Based Learning (2021)
+Miller, M.: Video Games and Indirect Learning: A Study of 12 Games That Can Teach. In: Esports Research and Its Integration in Education, pp. 69--84. IGI Global (2021)
 
 \bibitem{Martens2008}
-Martens, A., Diener, H., Malo, S.: 
+Martens, A., Diener, H., Malo, S.:
 \textit{Game-Based Learning with Computers Learning, Simulations, and Games}, vol. 5080, Berlin, Heidelberg (2008)
 
 \bibitem{villareale2020}
@@ -409,6 +433,11 @@ Ibrahim, R., Jaafar, A.:
 \textit{Using Educational Games in Learning Introductory Programming: A Pilot Study on Students' Perceptions}.
 In: IEEE International Conference, pp. 1--5. IEEE (2010).
 doi:10.1109/ITSIM.2010.5561324
+
+\bibitem{knowles1975}
+Knowles, M.S.:
+\textit{Self-Directed Learning: A Guide for Learners and Teachers}.
+Association Press, New York (1975)
 
 \bibitem{BaxterWebb2016}
 Baxter-Webb, J.:
@@ -442,19 +471,56 @@ Online educational game, \url{https://codecombat.com/}, last accessed 2026/09/03
 \bibitem{manufactoria}
 PleasingFungus Games:
 \textit{Manufactoria 2022}.
-Video game,Steam,\url{https://store.steampowered.com/app/1276070/Manufactoria\_2022/},lastaccessed2026/09/03
-
+Video game, Steam, \url{https://store.steampowered.com/app/1276070/Manufactoria_2022/}, last accessed 2026/09/03
 
 \bibitem{labor_support_game}
 Chang, C.-Y., et al.:
 \textit{Labor Support Game}: Scenario game-based learning system for nursing training.
 Interactive Learning Environments (2024). \doi{10.1080/10494820.2024.2308092}
 
-\bibitem{CambridgeHype}
-Cambridge Dictionary:
-\textit{Hype}.
-https://dictionary.cambridge.org/dictionary/english/hype,
-last accessed 2026/08/03
+% TODO: confirmar as datas de acesso das páginas Steam abaixo.
+\bibitem{datacenter}
+Waseku:
+\textit{Data Center}.
+Video game, Steam (2026), \url{https://store.steampowered.com/app/4376050/Data_Center_Demo/}
+
+\bibitem{pcbs}
+Claudiu Kiss:
+\textit{PC Building Simulator}.
+Video game, The Irregular Corporation (2019), \url{https://store.steampowered.com/app/621060/PC_Building_Simulator/}
+
+\bibitem{startup}
+Hovgaard Games:
+\textit{Startup Company}.
+Video game, Steam (2020), \url{https://store.steampowered.com/app/606800/Startup_Company/}
+
+\bibitem{softinc}
+Coredumping:
+\textit{Software Inc.}
+Video game, Steam (2015), \url{https://store.steampowered.com/app/362620/Software_Inc/}
+
+\bibitem{greyhack}
+Loading Home:
+\textit{Grey Hack}.
+Video game, Steam (2017), \url{https://store.steampowered.com/app/605230/Grey_Hack/}
+
+\bibitem{cyberciege}
+Irvine, C.E., Thompson, M.F., Allen, K.:
+\textit{CyberCIEGE: Gaming for Information Assurance}.
+IEEE Security \& Privacy \textbf{3}(3), 61--64 (2005).
+\doi{10.1109/MSP.2005.64}
+
+\bibitem{connolly2012}
+Connolly, T.M., Boyle, E.A., MacArthur, E., Hainey, T., Boyle, J.M.:
+\textit{A Systematic Literature Review of Empirical Evidence on Computer Games and Serious Games}.
+Computers \& Education \textbf{59}(2), 661--686 (2012).
+\doi{10.1016/j.compedu.2012.03.004}
+
+\bibitem{silva2020}
+Silva, F.G.M.:
+\textit{Practical Methodology for the Design of Educational Serious Games}.
+Information \textbf{11}(1), 14 (2020).
+\doi{10.3390/info11010014}
 
 \bibitem{framework-mda}
 Hunicke, R., LeBlanc, M., Zubek, R.:
