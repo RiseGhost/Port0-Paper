@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1794742157.32441 "samplepaper.tex" "samplepaper.pdf" "samplepaper" 1794742158.55783 0
+["pdflatex"] 1794742530.90069 "samplepaper.tex" "samplepaper.pdf" "samplepaper" 1794742532.13191 0
   "/etc/texmf/web2c/texmf.cnf" 1777608529.5952 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx0700.tfm" 1136768653 3584 ca0c423beaacd28d53ddce5a826cd558 ""
@@ -83,8 +83,8 @@
   "Images/WordRush_History.png" 1794002686.52408 190763 46ee315e6df4d0d8581bca613fd183e9 ""
   "Images/trends.pdf" 1785722770.12708 22482 9e9d232647e54f4e2c3ed29dcca37e39 ""
   "llncs.cls" 1784812658.24422 43402 5fb5a2dc40571aa40f3d199c00cbb986 ""
-  "samplepaper.aux" 1794742158.424 7243 3a9d4dac409c530ac92dcb6de343da2b "pdflatex"
-  "samplepaper.tex" 1794742155.92282 40928 5eb62e428a1b9998372c6f461c8b761d ""
+  "samplepaper.aux" 1794742531.99749 7243 3a9d4dac409c530ac92dcb6de343da2b "pdflatex"
+  "samplepaper.tex" 1794742530.75873 40851 14676c6134cff2011b37a8163bf73649 ""
   (generated)
   "samplepaper.aux"
   "samplepaper.log"
